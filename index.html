@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carlos Maldonado Nievas | Desarrollador Full Stack Python/Django Jr.</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script defer src="assets/js/scripts.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'black': { DEFAULT: '#0a0908', 100: '#020202', 200: '#050404', 300: '#070605', 400: '#090807', 500: '#0a0908', 600: '#423b35', 700: '#786c60', 800: '#a89d92', 900: '#d3cec9' }, 
+                        'gunmetal': { DEFAULT: '#22333b', 100: '#070a0c', 200: '#0d1417', 300: '#141e23', 400: '#1b282f', 500: '#22333b', 600: '#40606f', 700: '#608ea3', 800: '#95b4c2', 900: '#cad9e0' }, 
+                        'almond': { DEFAULT: '#eae0d5', 100: '#3c2d1e', 200: '#775b3c', 300: '#ae885f', 400: '#ccb49b', 500: '#eae0d5', 600: '#efe7de', 700: '#f3ede7', 800: '#f7f3ef', 900: '#fbf9f7' }, 
+                        'khaki': { DEFAULT: '#c6ac8f', 100: '#2d2317', 200: '#5b462e', 300: '#886945', 400: '#b08b62', 500: '#c6ac8f', 600: '#d2bda5', 700: '#ddcebc', 800: '#e8ded2', 900: '#f4efe9' }, 
+                        'walnut_brown': { DEFAULT: '#5e503f', 100: '#13100d', 200: '#262019', 300: '#393026', 400: '#4c4133', 500: '#5e503f', 600: '#89755b', 700: '#ab9880', 800: '#c7baab', 900: '#e3ddd5' },
+                        
+                        // Clases del Diseño
+                        'primary-color': '#c6ac8f', // Khaki para botones/acentos
+                        'secondary-color': '#22333b', // Gunmetal para fondos intermedios
+                        'background-dark': '#0a0908', // Black 500 para el Banner/Footer/Body
+                        'accent-light': '#eae0d5', // Almond 500 para las tarjetas principales
+                    }
+                }
+            },
+            boxShadow: {
+                'card': '0 10px 25px rgba(0, 0, 0, 0.4)',
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body class="bg-texture text-white font-sans">
+
+    <nav class="sticky top-0 z-50 bg-black-500 border-b-2 border-primary-color shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="#inicio" class="text-xl font-extrabold text-almond-500 tracking-tight">CarMalNie</a>
+                <div class="flex space-x-4">
+                    <a href="#presentacion" class="text-khaki-500 hover:text-almond-500 transition duration-150">Presentación</a>
+                    <a href="#proyectos" class="text-khaki-500 hover:text-almond-500 transition duration-150">Proyectos</a>
+                    <a href="#contacto" class="text-khaki-500 hover:text-almond-500 transition duration-150">Contacto</a>
+                    <a href="https://github.com/CarMalNie" target="_blank" class="text-almond-500 font-bold transition duration-150">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="inicio" class="relative bg-background-dark">
+    
+        <img src="banner.png" alt="Traduciendo la Ingeniería de Procesos a Código" 
+            class="absolute inset-0 w-full h-full object-cover">
+        
+        <div class="absolute inset-0 bg-black opacity-60"></div>
+    
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20 md:py-32">
+            
+            <p class="text-sm font-semibold text-primary-color mb-3 uppercase tracking-wider">TRADUCIENDO LA INGENIERÍA DE PROCESOS A CÓDIGO</p>
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4">
+                Carlos Maldonado Nievas
+            </h1>
+            <h2 class="text-2xl md:text-3xl font-light text-khaki-500 mb-8">
+                Ingeniero Civil Químico ⚗️ | Desarrollador Fullstack <span class="font-medium">(Python/Django) Jr.</span>
+            </h2>
+            <p class="max-w-3xl mx-auto text-lg text-almond-500/80">
+                Soy un híbrido profesional apasionado por construir las herramientas para la industria. Mi rol es actuar como el "traductor" entre los requerimientos técnicos de la ingeniería y un código robusto y escalable.
+            </p>
+            <div class="mt-10 flex justify-center space-x-4">
+                <a href="#proyectos" class="px-8 py-3 bg-primary-color text-black-500 font-bold rounded-lg shadow-xl transition duration-300 transform hover:scale-105">
+                    Ver Proyectos Destacados
+                </a>
+                <a href="https://www.linkedin.com/in/carmalnie" target="_blank" class="px-8 py-3 border border-primary-color text-primary-color hover:bg-primary-color/20 font-medium rounded-lg transition duration-300">
+                    LinkedIn
+                </a>
+            </div>
+    
+        </div>
+    </section>
+
+    <section id="presentacion" class="py-16 md:py-24 bg-gunmetal-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-3xl font-bold text-almond-500 mb-10 text-center">De la Molécula al Código: Mi Perfil</h3>
+            
+            <div class="max-w-4xl mx-auto bg-black-500/80 p-8 rounded-xl shadow-card text-gray-900 border-t-8 border-khaki-500 transition duration-300 hover:shadow-2xl">
+                <p class="text-lg leading-relaxed mb-6 text-gray-300">
+                    Mi experiencia como <strong>Ingeniero Civil Químico</strong> me proporcionó una sólida base analítica en <strong>evaluación técnico-económica de proyectos</strong> y <strong>control de calidad</strong> en las industrias de minería y alimentos.
+                </p>
+                <p class="text-lg leading-relaxed text-gray-300">
+                    Mi enfoque como <strong>Desarrollador Fullstack</strong> es tomar esa mentalidad de optimización de procesos y aplicarla a la arquitectura de software. Disfruto construyendo las herramientas que solucionan problemas complejos, traduciendo la lógica de la ingeniería en aplicaciones web eficientes.
+                </p>
+                <div class="mt-8 pt-6 border-t border-walnut_brown-500">
+                    
+                    <h4 class="text-xl font-semibold text-khaki-500 mb-4">Stack Técnico Clave</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="inline-block px-3 py-1 text-xs font-semibold rounded-full m-0.5 shadow-sm bg-gunmetal-500 text-almond-500">Python</span>
+                        <span class="inline-block px-3 py-1 text-xs font-semibold rounded-full m-0.5 shadow-sm bg-walnut_brown-500 text-almond-500">Django</span>
+                        <span class="inline-block px-3 py-1 text-xs font-semibold rounded-full m-0.5 shadow-sm bg-walnut_brown-600 text-almond-500">Django REST Framework</span>
+                        <span class="inline-block px-3 py-1 text-xs font-semibold rounded-full m-0.5 shadow-sm bg-walnut_brown-700 text-almond-500">Django Tenants</span>
+                        <span class="inline-block px-3 py-1 text-xs font-semibold rounded-full m-0.5 shadow-sm bg-gunmetal-700 text-almond-500">Docker</span>
+                        <span class="inline-block px-3 py-1 text-xs font-semibold rounded-full m-0.5 shadow-sm bg-black-500 text-almond-500">MySQL</span>
+                        <span class="inline-block px-3 py-1 text-xs font-semibold rounded-full m-0.5 shadow-sm bg-almond-600 text-black-500 border border-walnut_brown-500">HTML/CSS</span>
+                        <span class="inline-block px-3 py-1 text-xs font-semibold rounded-full m-0.5 shadow-sm bg-almond-700 text-black-500 border border-walnut_brown-500">JavaScript</span>
+                        <span class="inline-block px-3 py-1 text-xs font-semibold rounded-full m-0.5 shadow-sm bg-almond-800 text-black-500 border border-walnut_brown-500">Bootstrap</span>
+                        <span class="inline-block px-3 py-1 text-xs font-semibold rounded-full m-0.5 shadow-sm bg-gunmetal-600 text-almond-500">Git/GitHub</span>
+                    </div>
+                    <h4 class="text-xl font-semibold text-khaki-500 mt-6 mb-4">Habilidades de Ingeniería</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="inline-block px-3 py-1 text-xs font-semibold rounded-full m-0.5 shadow-sm bg-khaki-500 text-black-500">Ingeniería de Procesos</span>
+                        <span class="inline-block px-3 py-1 text-xs font-semibold rounded-full m-0.5 shadow-sm bg-khaki-600 text-black-500">Simulación (Aspen Plus)</span>
+                        <span class="inline-block px-3 py-1 text-xs font-semibold rounded-full m-0.5 shadow-sm bg-khaki-700 text-black-500">Análisis (MATLAB)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="proyectos" class="py-16 md:py-24 bg-gunmetal-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-4xl font-extrabold text-almond-500 mb-4 text-center">
+                Proyectos Destacados
+            </h3>
+            <p class="text-xl text-khaki-500 mb-12 text-center max-w-3xl mx-auto">
+                Mi trabajo se centra en construir aplicaciones Fullstack que resuelven problemas analíticos complejos.
+            </p>
+
+            <div class="bg-black-500/80 border border-khaki-500/50 p-8 rounded-xl shadow-2xl mb-12 shadow-card transition duration-300 hover:scale-[1.01]">
+                <h4 class="text-3xl font-bold text-khaki-500 mb-4">
+                    Aplicación Web "Gestor Químico"
+                </h4>
+                <p class="text-lg text-gray-300 mb-6">
+                    <strong>Objetivo</strong>: Plataforma Fullstack que permite a usuarios registrados gestionar una base de datos de compuestos químicos, incluyendo un módulo que calcula automáticamente el peso molecular de un compuesto al ingresar su fórmula (basado en la IUPAC).
+                </p>
+                
+                <div class="space-y-6">
+                    
+                    <div class="p-4 bg-gunmetal-600 rounded-lg border-l-4 border-khaki-500 shadow-md transition duration-200 hover:shadow-lg">
+                        <span class="inline-block px-3 py-1 text-xs font-semibold rounded-full m-0.5 shadow-sm bg-khaki-500 text-black-500">Hito 1: Lógica (Back-End Core)</span>
+                        <h5 class="text-xl font-bold text-almond-500 mt-2 mb-1">Calculadora Molecular Avanzada</h5>
+                        <ul class="list-disc list-inside text-gray-300 ml-4 space-y-0.5">
+                            <li><span class="font-semibold text-gray-100">Énfasis:</span> Uso de <strong>POO</strong> y <strong>Algoritmo Stack</strong> para parsear fórmulas (ej. Ca(OH)<sub>2</sub>).</li>
+                            <li><span class="font-semibold text-gray-100">Habilidades:</span> Python, POO, Algoritmos, Manejo de Errores.</li>
+                        </ul>
+                        <div class="mt-3 flex flex-wrap gap-2">
+                            <a href="https://github.com/CarMalNie/Calculadora-Peso-Molecular" target="_blank" class="px-3 py-1 bg-black-600 text-white text-xs font-bold rounded-md hover:bg-black-700 transition duration-150">
+                                Ver Código (GitHub)
+                            </a>
+                            <a href="[URL_VIDEO_CALCULADORA]" target="_blank" class="px-3 py-1 bg-walnut_brown-500 text-white text-xs font-bold rounded-md hover:bg-walnut_brown-600 transition duration-150">
+                                Ver Video-Tutorial (Hito 1)
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-gunmetal-600 rounded-lg border-l-4 border-walnut_brown-500 shadow-md transition duration-200 hover:shadow-lg">
+                        <span class="inline-block px-3 py-1 text-xs font-semibold rounded-full m-0.5 shadow-sm bg-walnut_brown-500 text-almond-500">Hito 2: Arquitectura de Datos</span>
+                        <h5 class="text-xl font-bold text-almond-500 mt-2 mb-1">Modelo Relacional MySQL</h5>
+                        <ul class="list-disc list-inside text-gray-300 ml-4 space-y-0.5">
+                            <li><span class="font-semibold text-gray-100">Énfasis:</span> Diseño de <strong>Esquema de Base de Datos (ERD) normalizado</strong> con <strong>Relaciones M:N</strong> (Muchos a Muchos).</li>
+                            <li><span class="font-semibold text-gray-100">Habilidades:</span> MySQL, SQL Avanzado, Modelado ERD.</li>
+                        </ul>
+                        <div class="mt-3 flex flex-wrap gap-2">
+                            <a href="https://github.com/CarMalNie/BD-Quimica-Relacional" target="_blank" class="px-3 py-1 bg-black-600 text-white text-xs font-bold rounded-md hover:bg-black-700 transition duration-150">
+                                Ver Código (GitHub)
+                            </a>
+                            <a href="[URL_VIDEO_MYSQL]" target="_blank" class="px-3 py-1 bg-walnut_brown-500 text-white text-xs font-bold rounded-md hover:bg-walnut_brown-600 transition duration-150">
+                                Ver Video-Tutorial (Hito 2)
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-gunmetal-600 rounded-lg border-l-4 border-almond-500 shadow-md transition duration-200 hover:shadow-lg">
+                        <span class="inline-block px-3 py-1 text-xs font-semibold rounded-full m-0.5 shadow-sm bg-almond-500 text-black-500">Hito 3: Integración Full Stack</span>
+                        <h5 class="text-xl font-bold text-almond-500 mt-2 mb-1">Plataforma Web Django con Autenticación</h5>
+                        <ul class="list-disc list-inside text-gray-300 ml-4 space-y-0.5">
+                            <li><span class="font-semibold text-gray-100">Énfasis:</span> Integración <strong>Django/MySQL</strong> usando el <strong>ORM</strong> para el CRUD y sistema de <strong>Autenticación</strong>.</li>
+                            <li><span class="font-semibold text-gray-100">Habilidades:</span> Django (MVT), ORM, Seguridad.</li>
+                        </ul>
+                        <div class="mt-3 flex flex-wrap gap-2">
+                            <a href="https://github.com/CarMalNie/Gestor_Quimico" target="_blank" class="px-3 py-1 bg-black-600 text-white text-xs font-bold rounded-md hover:bg-black-700 transition duration-150">
+                                Ver Código (GitHub)
+                            </a>
+                            <a href="[URL_VIDEO_DJANGO]" target="_blank" class="px-3 py-1 bg-walnut_brown-500 text-white text-xs font-bold rounded-md hover:bg-walnut_brown-600 transition duration-150">
+                                Ver Video-Tutorial (Hito 3)
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-10 p-5 bg-black-600/80 rounded-lg border border-khaki-500/50">
+                    <h5 class="text-xl font-semibold text-khaki-500 mb-2">Oportunidades de Mejora</h5>
+                    <p class="text-gray-300">
+                        El proyecto es funcional, pero una mejora clave para su escalabilidad sería refactorizar la lógica del backend a una <strong>API (Django REST Framework)</strong>. Esto desacoplaría el frontend y permitiría, a futuro, integrar librerías de <strong>Ciencia de Datos</strong> (Pandas/NumPy) para análisis más complejos.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="bg-black-500/80 border border-walnut_brown-500/50 p-8 rounded-xl shadow-2xl mt-12 shadow-card transition duration-300 hover:scale-[1.01]">
+                <h4 class="text-3xl font-bold text-khaki-500 mb-4">
+                    Proyecto Frontend: Sitio Web sobre Ciberseguridad
+                </h4>
+                <p class="text-lg text-gray-300 mb-6">
+                    <strong>Objetivo</strong>: Sitio web informativo de 3 páginas sobre conceptos fundamentales de la Ciberseguridad, enfocado en demostrar habilidades de maquetación web y diseño responsivo.
+                </p>
+                <p class="text-lg text-gray-300 mb-6">
+                    <strong>Tecnologías</strong>: HTML, CSS, JavaScript, Bootstrap.
+                </p>
+                
+                <div class="flex flex-wrap items-center gap-4 p-4 bg-gunmetal-500/50 rounded-lg border border-walnut_brown-500/30">
+                    <span class="text-lg font-semibold text-gray-100">Evidencia:</span>
+                    <a href="https://github.com/CarMalNie/Proyecto---Ciberseguridad" target="_blank" class="px-4 py-2 bg-black-600 text-white font-bold rounded-md hover:bg-black-700 transition duration-150">
+                        Código Fuente (GitHub)
+                    </a>
+                    <a href="[URL_VIDEO_YOUTUBE_CIBERSEGURIDAD]" target="_blank" class="px-4 py-2 bg-walnut_brown-500 text-white font-bold rounded-md hover:bg-walnut_brown-600 transition duration-1OS">
+                        Video Tutorial Técnico (YouTube)
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer id="contacto" class="bg-black-500 py-12 border-t border-walnut_brown-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400">
+            <h4 class="text-2xl font-bold text-almond-500 mb-4">Contacto Rápido</h4>
+            <p class="mb-6 max-w-2xl mx-auto text-khaki-500">
+                Busco un rol desafiante donde mi capacidad analítica y mis nuevas habilidades tecnológicas generen impacto.
+            </p>
+            <div class="flex justify-center space-x-6">
+                <a href="mailto:carmalnie@gmail.com" class="text-primary-color hover:text-almond-500 transition duration-150">
+                    <span class="font-semibold">Email:</span> carmalnie@gmail.com
+                </a>
+                <a href="https://www.linkedin.com/in/carmalnie" target="_blank" class="text-primary-color hover:text-almond-500 transition duration-150">
+                    LinkedIn
+                </a>
+                <a href="https://github.com/CarMalNie" target="_blank" class="text-primary-color hover:text-almond-500 transition duration-150">
+                    GitHub
+                </a>
+            </div>
+            <p class="mt-8 text-sm text-khaki-600">
+                © 2025 Carlos Maldonado Nievas.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
