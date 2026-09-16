@@ -279,10 +279,15 @@
             </div>
 
             <p class="mt-24 text-[10px] font-black uppercase tracking-[1em] text-white/20">
-                © 2026 Carlos Maldonado Nievas
+                © <span id="year">2026</span> Carlos Maldonado Nievas
             </p>
         </div>
     </footer>
+
+<script>
+    // Footer: el anio se actualiza automaticamente
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
