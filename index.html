@@ -158,15 +158,18 @@
             </div>
 
             <div class="bg-black/60 border border-white/10 p-8 md:p-12 rounded-3xl shadow-2xl mb-16 card-hover group">
-                <div class="flex flex-col md:flex-row md:items-center justify-between mb-8">
+                <div class="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
                     <h4 class="text-3xl md:text-4xl font-black text-khaki-500 tracking-tight group-hover:text-almond-500 transition-colors">
-                        Aplicación Web "Gestor Químico"
+                        Aplicación Web "Gestor Químico" — En Producción
                     </h4>
+                    <a href="https://carmalnie.pythonanywhere.com/" target="_blank" class="shrink-0 px-6 py-3 bg-khaki-500 text-black font-black rounded-xl hover:bg-almond-500 transition duration-300 text-sm uppercase tracking-widest flex items-center gap-2">
+                        <i class="fa-solid fa-globe"></i> Demo en Vivo
+                    </a>
                 </div>
                 
                 <p class="text-xl text-gray-300 mb-10 leading-relaxed font-light border-l-4 border-khaki-500 pl-6">
                     <strong class="text-almond-500 uppercase text-sm tracking-widest block mb-2">Qué resuelve</strong> 
-                    Plataforma Full Stack para la gestión de una base de datos de compuestos químicos, con un motor que calcula automáticamente el peso molecular de un compuesto a partir de su fórmula.
+                    Plataforma Full Stack en producción para la gestión de una base de datos de compuestos químicos, con un motor que calcula automáticamente el peso molecular a partir de fórmulas IUPAC complejas (incluidos hidratos), integración con la API pública de PubChem y visualización de estructuras 2D. Desplegada en producción con recuperación de contraseña por email, MFA opcional (TOTP) y una suite de más de 130 tests automatizados integrados a CI.
                 </p>
                 
                 <div class="space-y-8">
@@ -206,14 +209,17 @@
 
                     <div class="p-6 bg-gunmetal-600/50 rounded-2xl border border-white/5 hover:bg-gunmetal-600 transition-all duration-300">
                         <span class="px-3 py-1 text-[10px] font-black rounded-full bg-almond-500 text-black uppercase tracking-tighter">Integración Full Stack</span>
-                        <h5 class="text-2xl font-bold text-almond-500 mt-4 mb-3 uppercase tracking-tight">Plataforma Web Django</h5>
+                        <h5 class="text-2xl font-bold text-almond-500 mt-4 mb-3 uppercase tracking-tight">Plataforma Web Django en Producción</h5>
                         <p class="text-gray-400 text-lg mb-4 font-light leading-relaxed">
-                            Integración <strong>Django/MySQL</strong> con <strong>ORM</strong>, CRUD sobre las 8 tablas y sistema de <strong>autenticación</strong>.
+                            Integración <strong>Django 5.2/MySQL</strong> con <strong>ORM</strong>, CRUD sobre las 8 tablas y autenticación completa: login con <strong>rate limiting</strong>, recuperación de contraseña por email real, <strong>MFA TOTP</strong> opcional con códigos de respaldo, hardening de headers HTTPS y <strong>ownership estricto</strong> de datos verificado con tests de permisos. Desplegada en <strong>PythonAnywhere</strong> con envío de email transaccional real (Brevo) y despliegue reproducible.
                         </p>
-                        <p class="text-sm font-mono text-khaki-500/60 mb-8 uppercase tracking-widest">Tecnologías: Django | ORM | HTML/CSS | Seguridad</p>
+                        <p class="text-sm font-mono text-khaki-500/60 mb-8 uppercase tracking-widest">Tecnologías: Django 5.2 | MySQL | Bootstrap 5 | pytest + CI (GitHub Actions) | MFA (django-otp) | django-axes | Brevo | PythonAnywhere</p>
                         <div class="flex flex-wrap gap-4 mt-6">
                             <a href="https://github.com/CarMalNie/Gestor_Quimico" target="_blank" class="px-6 py-3 bg-black text-almond-500 font-bold rounded-xl hover:bg-white hover:text-black transition duration-300 text-sm uppercase tracking-widest flex items-center gap-2">
                                 <i class="fa-brands fa-github"></i> GitHub
+                            </a>
+                            <a href="https://carmalnie.pythonanywhere.com/" target="_blank" class="px-6 py-3 bg-khaki-500 text-black font-black rounded-xl hover:bg-almond-500 transition duration-300 text-sm uppercase tracking-widest flex items-center gap-2">
+                                <i class="fa-solid fa-globe"></i> Demo en Vivo
                             </a>
                             <a href="https://youtu.be/-5b_5_unwvo" target="_blank" class="px-6 py-3 border border-walnut_brown-500 text-almond-500 font-bold rounded-xl hover:bg-walnut_brown-500/20 transition duration-300 text-sm uppercase tracking-widest flex items-center gap-2">
                                 <i class="fa-brands fa-youtube"></i> Video Demo
