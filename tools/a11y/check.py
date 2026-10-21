@@ -57,7 +57,8 @@ def uniform_mobile_shift(baseline_rows, current_rows, viewport, base_report=None
 
     Reports recorded before `navHeight` existed fall back to the most common
     non-nav dy, accepted only when no other delta ties with it and at least three
-    rows agree: with too few rows a lone outlier would look unanimous.
+    rows agree. The fallback requires a positive dy: there the movement has no
+    measured cause, so exempting an upward shift could hide a real one.
     """
     if base_report is not None and cur_report is not None:
         before = nav_height(base_report, viewport)
@@ -75,7 +76,7 @@ def uniform_mobile_shift(baseline_rows, current_rows, viewport, base_report=None
         dx = n["rect"][0] - m["rect"][0]
         dy = n["rect"][1] - m["rect"][1]
         same_size = n["rect"][2:] == m["rect"][2:]
-        if dx == 0 and same_size and dy:
+        if dx == 0 and same_size and dy > 0:
             deltas[dy] = deltas.get(dy, 0) + 1
     if not deltas:
         return 0
