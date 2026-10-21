@@ -40,16 +40,31 @@ def intended_layout_change(label, viewport):
     return label.startswith("nav-") and viewport.endswith("-mobile")
 
 
-def uniform_mobile_shift(baseline_rows, current_rows, viewport):
+def nav_height(report, viewport):
+    """Nav container height as measured in that report, or None if unrecorded."""
+    raw = (report.get("raw") or {}).get(viewport) or {}
+    value = (raw.get("checks") or {}).get("navHeight")
+    return value if isinstance(value, (int, float)) else None
+
+
+def uniform_mobile_shift(baseline_rows, current_rows, viewport, base_report=None, cur_report=None):
     """Vertical push the taller mobile nav imposes on everything below it.
 
-    The nav is sticky, so it stays in the flow: wrapping to two rows grows it
-    from 81px to 133px at 390px and moves every element below by the same
-    +52px, with the same x, width and height. That delta is derived from the
-    reports (the most common non-nav dy of the viewport) rather than hardcoded,
-    and a rect is accepted only when it moved by exactly that much. Anything
-    else is still reported as a regression.
+    Preferred source is the measured difference between the two reports' nav
+    heights: the nav is sticky, so it stays in the flow and its height delta is
+    exactly what moves the content below it. That is structural, so a single row
+    that moved cannot be mistaken for the exemption amount.
+
+    Reports recorded before `navHeight` existed fall back to the most common
+    non-nav dy, accepted only when no other delta ties with it and at least three
+    rows agree: with too few rows a lone outlier would look unanimous.
     """
+    if base_report is not None and cur_report is not None:
+        before = nav_height(base_report, viewport)
+        after = nav_height(cur_report, viewport)
+        if before is not None and after is not None:
+            return int(round(after - before))
+
     deltas = {}
     for label, per in baseline_rows.items():
         if label.startswith("nav-"):
@@ -67,12 +82,14 @@ def uniform_mobile_shift(baseline_rows, current_rows, viewport):
     ranked = sorted(deltas.items(), key=lambda kv: -kv[1])
     if len(ranked) > 1 and ranked[0][1] == ranked[1][1]:
         return 0  # two candidate deltas tie: exempt nothing rather than pick one
+    if ranked[0][1] < 3:
+        return 0  # too few rows to call it uniform
     return ranked[0][0]
 
 
 def moved_only_by(before, after, shift):
     """True when a rect moved by exactly `shift` in y and changed nothing else."""
-    return (shift > 0 and before[0] == after[0] and before[2:] == after[2:]
+    return (shift != 0 and before[0] == after[0] and before[2:] == after[2:]
             and after[1] - before[1] == shift)
 
 
@@ -152,7 +169,7 @@ def main():
     elif baseline_tag:
         bl = rows_by_label(base)
         layout_bad, color_bad = [], []
-        shifts = {vp: uniform_mobile_shift(bl, rl, vp) for vp in MOBILE_VIEWPORTS}
+        shifts = {vp: uniform_mobile_shift(bl, rl, vp, base, rep) for vp in MOBILE_VIEWPORTS}
         for label, per in bl.items():
             for vp, m in per.items():
                 if m["status"] in SKIP:
@@ -168,11 +185,12 @@ def main():
                     color_bad.append("%s@%s color %s -> %s" % (label, vp, m["color"], n["color"]))
                 if m["status"] == "PASS" and n["status"] != "PASS":
                     layout_bad.append("%s@%s regressed to %s" % (label, vp, n["status"]))
-        checks.append(("S7 no layout regression", not layout_bad, "; ".join(layout_bad[:6])))
+        detail = "; ".join(layout_bad[:6])
+        accepted = ", ".join("%s %+dpx" % (k, v) for k, v in sorted(shifts.items()))
+        if accepted:
+            detail = (detail + " | " if detail else "") + "accepted nav shift: " + accepted
+        checks.append(("S7 no layout regression", not layout_bad, detail))
         checks.append(("S7 no unexpected color change", not color_bad, "; ".join(color_bad[:6])))
-        checks.append(("S7 mobile shift reports the measured delta",
-                       all(v >= 0 for v in shifts.values()),
-                       ", ".join("%s +%dpx" % (k, v) for k, v in sorted(shifts.items()))))
 
     width = max(len(c[0]) for c in checks)
     fails = 0

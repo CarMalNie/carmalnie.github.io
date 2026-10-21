@@ -138,6 +138,10 @@ f.addEventListener('load', function () {
                      outlineColor: cs.outlineColor, boxShadow: cs.boxShadow.slice(0, 90) };
           })() : null,
           mainLandmarks: doc.querySelectorAll('main').length,
+          navHeight: (function () {
+            var n = doc.querySelector('nav');
+            return n ? Math.round(n.getBoundingClientRect().height) : null;
+          })(),
           skipLink: doc.querySelectorAll('a[href^="#"][class*="sr-only"], a.skip-link').length,
           hasReveal: !!doc.querySelector('#inicio .reveal, #inicio [class*="reveal"]')
         };
