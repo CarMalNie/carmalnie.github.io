@@ -16,6 +16,11 @@ OUT = common.OUT
 WORK = common.WORK
 WIDTHS = [320, 360, 390, 414, 480, 640, 768, 1024, 1280, 1440]
 SPEC = 320  # the width WCAG 1.4.10 names
+# One budget, and the readiness deadline derived from it: two constants that
+# had to be kept in sync by hand could drift, and the deadline firing after the
+# budget expires brings back the silent hang it exists to diagnose.
+VIRTUAL_BUDGET_MS = 30000
+READY_DEADLINE_MS = VIRTUAL_BUDGET_MS * 2 // 3
 
 
 def build():
@@ -32,9 +37,9 @@ window.onerror = function (m) { document.title = 'ERR:' + m; };
 var frames = [].slice.call(document.querySelectorAll('iframe.f'));
 var left = frames.length;
 var failed = [];
-// Keep in sync with --virtual-time-budget in run(): the deadline must fire
-// before the budget expires, or the run dies with no diagnosis.
-var READY_DEADLINE_MS = 20000;
+// Derived in Python from the same budget passed to Chrome, so the two cannot
+// drift apart.
+var READY_DEADLINE_MS = %(deadline)d;
 function diag(doc, win) {
   var vw = win.innerWidth, out = [];
   var els = doc.querySelectorAll('body *');
@@ -80,7 +85,7 @@ frames.forEach(function (f) {
     })();
   });
 });
-</script></body></html>""" % {"frames": frames}
+</script></body></html>""" % {"frames": frames, "deadline": READY_DEADLINE_MS}
     p = os.path.join(WORK, "widths.html")
     open(p, "w", encoding="utf-8").write(html)
     return p
@@ -90,7 +95,7 @@ def run(page):
     flags = common.extra_flags() + [
         "--headless=new", "--disable-gpu", "--hide-scrollbars",
         "--force-device-scale-factor=1", "--window-size=1500,1000",
-        "--virtual-time-budget=30000", "--no-first-run",
+        "--virtual-time-budget=%d" % VIRTUAL_BUDGET_MS, "--no-first-run",
         "--no-default-browser-check", "--allow-file-access-from-files",
         "--user-data-dir=" + os.path.join(WORK, "profile"),
         "file:///" + page.replace("\\", "/").lstrip("/"),
