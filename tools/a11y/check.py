@@ -13,7 +13,7 @@ import common
 
 OUT = common.OUT
 
-# spec id -> requirement
+# Element labels the specs assert on, not spec ids.
 HERO = ["hero-eyebrow", "hero-h1", "hero-h2", "hero-lead", "hero-cta-linkedin"]
 MUTED = ["proj1-tech", "sub-tech", "ciber-tech", "footer-copyright"]
 # Muted lines were deliberately darkened to reach AA: S7 diffs colors, so these
@@ -115,7 +115,7 @@ def main():
     assert_pass(HERO, ["hero-desktop", "hero-mobile"], "S1 hero contrast >= AA")
     # S2 — WCAG 1.4.3 on muted/secondary text
     assert_pass(MUTED, ["lower-desktop", "lower-mobile"], "S2 muted contrast >= AA")
-    # S3..S6 — structural tokens read from the rendered page
+    # S3..S7 — structural tokens read from the rendered page, in spec order.
     meta = rep["raw"]["lower-desktop"]["checks"]
     checks.append(("S3 banner is decorative (alt=\"\")", meta.get("bannerAltEmpty") is True,
                    "alt=%r" % meta.get("bannerAlt")))
@@ -127,17 +127,19 @@ def main():
                    "%d link(s) with only a title attribute" % len(bad_links)))
     checks.append(("S5 focus-visible token exists", bool(meta["css"].get("focusVisible")),
                    "rules: %s" % (meta["css"].get("focusVisible") or "none")))
+    checks.append(("S6 prefers-reduced-motion token exists", bool(meta["css"].get("reducedMotion")),
+                   "rules: %s" % (meta["css"].get("reducedMotion") or "none")))
     checks.append(("S7 single main landmark", meta.get("mainLandmarks") == 1,
                    "main elements: %s" % meta.get("mainLandmarks")))
     checks.append(("S7 skip link present", meta.get("skipLink") == 1,
                    "skip links: %s" % meta.get("skipLink")))
-    checks.append(("S6 prefers-reduced-motion token exists", bool(meta["css"].get("reducedMotion")),
-                   "rules: %s" % (meta["css"].get("reducedMotion") or "none")))
 
     # S7 — differential: nothing else moved or changed color
     base_env = cur_env = None
+    base = None
     if baseline_tag:
-        base_env = (load(baseline_tag).get("env") or {}).get("platform")
+        base = load(baseline_tag)
+        base_env = (base.get("env") or {}).get("platform")
         cur_env = (rep.get("env") or {}).get("platform")
     if baseline_tag and base_env and cur_env and base_env != cur_env:
         # Font metrics and text wrapping differ per platform, so the same page
@@ -148,7 +150,6 @@ def main():
                        "baseline measured on %s, this run on %s: rects are not comparable"
                        % (base_env, cur_env)))
     elif baseline_tag:
-        base = load(baseline_tag)
         bl = rows_by_label(base)
         layout_bad, color_bad = [], []
         shifts = {vp: uniform_mobile_shift(bl, rl, vp) for vp in MOBILE_VIEWPORTS}
@@ -174,16 +175,18 @@ def main():
 
     width = max(len(c[0]) for c in checks)
     fails = 0
+    skipped = 0
     for spec, ok, detail in checks:
         if ok is None:
             status = "SKIP"
+            skipped += 1
         elif ok:
             status = "PASS"
         else:
             status = "FAIL"
             fails += 1
         print("%s  %-*s  %s" % (status, width, spec, detail))
-    print("\n%d check(s), %d failure(s)" % (len(checks), fails))
+    print("\n%d check(s), %d failure(s), %d skipped" % (len(checks), fails, skipped))
     return 1 if fails else 0
 
 

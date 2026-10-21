@@ -145,6 +145,7 @@ f.addEventListener('load', function () {
           vw: win.innerWidth, vh: win.innerHeight, dpr: win.devicePixelRatio,
           docH: doc.documentElement.scrollHeight,
           scrollW: doc.documentElement.scrollWidth,
+          ua: navigator.userAgent,
           overflowX: doc.documentElement.scrollWidth > win.innerWidth + 1,
           checks: checks, items: out }))));
       }, 400);
@@ -235,7 +236,9 @@ def measure(item, img, frame_h):
     y1 = int(round(r["y"] + bh * 0.8)) - 1
     if x1 - x0 < 2 or y1 - y0 < 2:
         return {"status": "TOO-SMALL"}
-    if y1 > frame_h or x1 > img.width:
+    # A crop whose origin is negative would be padded with black by PIL and the
+    # ratio measured against pixels the page never painted.
+    if x0 < 0 or y0 < 0 or y1 > frame_h or x1 > img.width:
         return {"status": "OFFSCREEN"}
     crop = img.crop((x0, y0, x1, y1))
     fg, alpha = parse_color(item["color"])
@@ -287,15 +290,19 @@ def main():
         ("lower-mobile", "variantB.html", 390, 8600, True),
     ]
     report = {"env": {"platform": sys.platform, "page": common.PAGE}, "variants": {}, "raw": {}}
-    for label, src, w, h, fit in runs:
+    for index, (label, src, w, h, fit) in enumerate(runs):
         page = make_parent("page-%s.html" % label, src, w, h)
         data = run(page, w, h + 100, "%s-%s" % (tag, label))
         if fit and data["docH"] > h:  # content clipped: retry tall enough to hold it
             h = data["docH"] + 20
             page = make_parent("page-%s.html" % label, src, w, h)
             data = run(page, w, h + 100, "%s-%s" % (tag, label))
+        if index == 0:
+            # Provenance: a ratio only means something next to the engine that
+            # rendered it, and `chrome --version` answers from a live session.
+            report["env"]["user_agent"] = data.get("ua")
         report["variants"][label] = collect(data, label, h)
-        report["raw"][label] = {k: v for k, v in data.items() if k not in ("items", "png")}
+        report["raw"][label] = {k: v for k, v in data.items() if k not in ("items", "png", "ua")}
         report["raw"][label]["png"] = data["png"]
     with open(os.path.join(OUT, "report-%s.json" % tag), "w", encoding="utf-8") as f:
         json.dump(report, f, indent=1, ensure_ascii=False)

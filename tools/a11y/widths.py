@@ -31,6 +31,10 @@ def build():
 window.onerror = function (m) { document.title = 'ERR:' + m; };
 var frames = [].slice.call(document.querySelectorAll('iframe.f'));
 var left = frames.length;
+var failed = [];
+// Keep in sync with --virtual-time-budget in run(): the deadline must fire
+// before the budget expires, or the run dies with no diagnosis.
+var READY_DEADLINE_MS = 20000;
 function diag(doc, win) {
   var vw = win.innerWidth, out = [];
   var els = doc.querySelectorAll('body *');
@@ -47,13 +51,15 @@ function diag(doc, win) {
 }
 frames.forEach(function (f) {
   f.addEventListener('load', function () {
-    var win = f.contentWindow, doc = win.document, tries = 0;
+    var win = f.contentWindow, doc = win.document, started = Date.now();
     (function ready() {
       if (doc.readyState !== 'complete') {
-        // Bounded: a frame that never settles must fail loudly with the width
-        // that hung, instead of dying on the virtual time budget with no clue.
-        if (++tries > 40) {
-          document.title = 'ERR:frame-not-ready-at-' + f.dataset.w + 'px';
+        // Bounded by a deadline that leaves room for the last frame inside
+        // --virtual-time-budget, not by an arbitrary retry count: a frame that
+        // never settles must fail loudly and name every width that hung.
+        if (Date.now() - started > READY_DEADLINE_MS) {
+          failed.push(f.dataset.w);
+          if (--left === 0) document.title = 'ERR:frame-not-ready-at-' + failed.join(',') + 'px';
           return;
         }
         setTimeout(ready, 50); return;
@@ -65,6 +71,8 @@ frames.forEach(function (f) {
                     offenders: diag(doc, win) };
         f.dataset.result = JSON.stringify(res);
         if (--left === 0) {
+          // A success must never mask a frame that gave up.
+          if (failed.length) { document.title = 'ERR:frame-not-ready-at-' + failed.join(',') + 'px'; return; }
           var all = frames.map(function (x) { return JSON.parse(x.dataset.result); });
           document.title = 'WIDTHS:' + btoa(unescape(encodeURIComponent(JSON.stringify(all))));
         }
