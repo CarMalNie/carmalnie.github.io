@@ -22,6 +22,11 @@ jobs:
       A11Y_NO_SANDBOX: "1"
     steps:
       - uses: actions/checkout@v4
+        with:
+          # The S7 differential needs the parent commit to measure its baseline;
+          # the default depth of 1 leaves HEAD~1 missing and the gate would
+          # silently fall back to the absolute specs.
+          fetch-depth: 2
 
       - uses: actions/setup-python@v5
         with:
@@ -55,22 +60,25 @@ jobs:
       - name: Baseline from the parent commit, same runner
         working-directory: tools/a11y
         run: |
-          if git rev-parse --verify --quiet HEAD~1 >/dev/null; then
-            git worktree add --detach "$RUNNER_TEMP/a11y-base" HEAD~1
-            A11Y_PAGE="$RUNNER_TEMP/a11y-base/index.html" python probe.py ci-base
-          else
-            echo "no parent commit: the S7 differential needs one"
+          set -euo pipefail
+          if ! git rev-parse --verify --quiet HEAD~1 >/dev/null; then
+            echo "::error::HEAD~1 is missing; the S7 differential needs the parent commit (checkout fetch-depth)"
+            exit 1
           fi
+          git worktree add --detach "$RUNNER_TEMP/a11y-base" HEAD~1
+          A11Y_PAGE="$RUNNER_TEMP/a11y-base/index.html" python probe.py ci-base
 
-      - name: Acceptance spec
+      - name: Acceptance spec, differential included
         working-directory: tools/a11y
         run: |
-          if [ -f out/report-ci-base.json ]; then
-            python check.py ci ci-base
-          else
-            echo "no same-runner baseline: absolute specs only"
-            python check.py ci
-          fi
+          set -euo pipefail
+          # No silent fallback: if this file is missing the baseline step was
+          # skipped, and a green run would lie about having diffed anything.
+          test -f out/report-ci-base.json || {
+            echo "::error::no same-runner baseline; S7 did not run"
+            exit 1
+          }
+          python check.py ci ci-base
 
       - name: Keep the evidence when a gate fails
         if: failure()

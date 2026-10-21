@@ -36,8 +36,12 @@ the contrast probe would sample:
 baseline on a linux runner turned one uniform 52px nav push into two competing
 deltas of 52px and 72px and reported every rect below the fold as a regression.
 That is why CI measures its own baseline from the parent commit on the same
-runner instead of trusting the committed one. When there is no parent commit,
-the step says so and the spec runs without the differential.
+runner instead of trusting the committed one.
+
+The workflow checks out with `fetch-depth: 2`, because with the default depth of
+1 there is no `HEAD~1` to measure. If the parent is missing, or the baseline file
+is absent at the acceptance step, the job **fails** instead of quietly running
+the absolute specs: a green run must not claim to have diffed anything.
 
 Locally, `check.py <tag> before` still diffs against the committed baseline, and
 `check.py` prints an explicit `SKIP` when the two reports record different
