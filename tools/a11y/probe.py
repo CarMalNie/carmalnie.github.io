@@ -286,7 +286,7 @@ def main():
         ("lower-desktop", "variantB.html", 1440, 6200, True),
         ("lower-mobile", "variantB.html", 390, 8600, True),
     ]
-    report = {"variants": {}, "raw": {}}
+    report = {"env": {"platform": sys.platform, "page": common.PAGE}, "variants": {}, "raw": {}}
     for label, src, w, h, fit in runs:
         page = make_parent("page-%s.html" % label, src, w, h)
         data = run(page, w, h + 100, "%s-%s" % (tag, label))

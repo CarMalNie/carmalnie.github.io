@@ -28,7 +28,16 @@ the contrast probe would sample:
 
 1. `widths.py ci` — WCAG 1.4.10 reflow, 320-1440px
 2. `probe.py ci` — WCAG 1.4.3 contrast on rendered pixels plus structure
-3. `check.py ci before` — the acceptance spec against the committed baseline
+3. `check.py ci` — the absolute acceptance spec (`S1`-`S6`)
+
+CI runs the absolute spec only, without a baseline: `S7` compares rects against
+`out/report-before.json`, which was captured on another machine, and font
+metrics differ per platform. Measured on the first CI run: a linux runner
+against a win32 baseline turned one uniform 52px nav push into two competing
+deltas of 52px and 72px, and every rect below the fold was reported as a
+regression. The differential stays a same-machine tool — run
+`check.py <tag> before` locally — and `check.py` skips it with an explicit
+`SKIP` line when the two reports record different platforms.
 
 A failing run uploads `out/*.json` and the screenshots from `.work/` as
 artifacts, so a red build can be diagnosed without re-running it.

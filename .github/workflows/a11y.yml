@@ -45,9 +45,14 @@ jobs:
         working-directory: tools/a11y
         run: python probe.py ci
 
-      - name: Acceptance spec against the pre-pass baseline
+      # Absolute specs only. The S7 differential compares rects against a
+      # baseline captured on another machine, and font metrics differ per
+      # platform: measured, linux against a win32 baseline turned a single 52px
+      # nav push into two competing deltas of 52 and 72. Run
+      # `check.py <tag> before` locally, where the baseline is comparable.
+      - name: Acceptance spec (S7 differential is same-machine only)
         working-directory: tools/a11y
-        run: python check.py ci before
+        run: python check.py ci
 
       - name: Keep the evidence when a gate fails
         if: failure()

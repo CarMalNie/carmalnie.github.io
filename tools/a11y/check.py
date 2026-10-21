@@ -135,7 +135,19 @@ def main():
                    "rules: %s" % (meta["css"].get("reducedMotion") or "none")))
 
     # S7 — differential: nothing else moved or changed color
+    base_env = cur_env = None
     if baseline_tag:
+        base_env = (load(baseline_tag).get("env") or {}).get("platform")
+        cur_env = (rep.get("env") or {}).get("platform")
+    if baseline_tag and base_env and cur_env and base_env != cur_env:
+        # Font metrics and text wrapping differ per platform, so the same page
+        # has different rects and a cross-platform diff reports noise as
+        # regression. Measured: linux vs win32 turned one 52px nav push into two
+        # competing deltas of 52 and 72.
+        checks.append(("S7 differential across platforms", None,
+                       "baseline measured on %s, this run on %s: rects are not comparable"
+                       % (base_env, cur_env)))
+    elif baseline_tag:
         base = load(baseline_tag)
         bl = rows_by_label(base)
         layout_bad, color_bad = [], []
@@ -163,9 +175,14 @@ def main():
     width = max(len(c[0]) for c in checks)
     fails = 0
     for spec, ok, detail in checks:
-        if not ok:
+        if ok is None:
+            status = "SKIP"
+        elif ok:
+            status = "PASS"
+        else:
+            status = "FAIL"
             fails += 1
-        print("%s  %-*s  %s" % ("PASS" if ok else "FAIL", width, spec, detail))
+        print("%s  %-*s  %s" % (status, width, spec, detail))
     print("\n%d check(s), %d failure(s)" % (len(checks), fails))
     return 1 if fails else 0
 
