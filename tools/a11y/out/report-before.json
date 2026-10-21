@@ -1,0 +1,3374 @@
+{
+ "variants": {
+  "hero-desktop": {
+   "viewport": "hero-desktop",
+   "rows": [
+    {
+     "status": "PASS",
+     "need": 3.0,
+     "worst": 15.34,
+     "median": 15.34,
+     "fg": [
+      234,
+      224,
+      213
+     ],
+     "alpha": 1.0,
+     "fontSize": 24,
+     "fontWeight": 900,
+     "worstBackdropPx": [
+      10,
+      8,
+      7
+     ],
+     "label": "nav-brand",
+     "rect": [
+      112,
+      24,
+      117,
+      32
+     ],
+     "color": "rgb(234, 224, 213)"
+    },
+    {
+     "status": "PASS",
+     "need": 4.5,
+     "worst": 9.23,
+     "median": 9.23,
+     "fg": [
+      198,
+      172,
+      143
+     ],
+     "alpha": 1.0,
+     "fontSize": 14,
+     "fontWeight": 700,
+     "worstBackdropPx": [
+      10,
+      8,
+      7
+     ],
+     "label": "nav-link-presentacion",
+     "rect": [
+      799,
+      30,
+      126,
+      20
+     ],
+     "color": "rgb(198, 172, 143)"
+    },
+    {
+     "status": "PASS",
+     "need": 4.5,
+     "worst": 9.23,
+     "median": 9.23,
+     "fg": [
+      198,
+      172,
+      143
+     ],
+     "alpha": 1.0,
+     "fontSize": 14,
+     "fontWeight": 700,
+     "worstBackdropPx": [
+      10,
+      8,
+      7
+     ],
+     "label": "nav-link-proyectos",
+     "rect": [
+      956,
+      30,
+      99,
+      20
+     ],
+     "color": "rgb(198, 172, 143)"
+    },
+    {
+     "status": "PASS",
+     "need": 4.5,
+     "worst": 9.23,
+     "median": 9.23,
+     "fg": [
+      198,
+      172,
+      143
+     ],
+     "alpha": 1.0,
+     "fontSize": 14,
+     "fontWeight": 700,
+     "worstBackdropPx": [
+      10,
+      8,
+      7
+     ],
+     "label": "nav-link-contacto",
+     "rect": [
+      1087,
+      30,
+      91,
+      20
+     ],
+     "color": "rgb(198, 172, 143)"
+    },
+    {
+     "status": "PASS",
+     "need": 4.5,
+     "worst": 15.27,
+     "median": 15.27,
+     "fg": [
+      10,
+      9,
+      8
+     ],
+     "alpha": 1.0,
+     "fontSize": 14,
+     "fontWeight": 900,
+     "worstBackdropPx": [
+      234,
+      224,
+      213
+     ],
+     "label": "nav-github-btn",
+     "rect": [
+      1210,
+      22,
+      118,
+      36
+     ],
+     "color": "rgb(10, 9, 8)"
+    },
+    {
+     "status": "FAIL",
+     "need": 4.5,
+     "worst": 1.24,
+     "median": 1.27,
+     "fg": [
+      198,
+      172,
+      143
+     ],
+     "alpha": 1.0,
+     "fontSize": 14,
+     "fontWeight": 900,
+     "worstBackdropPx": [
+      158,
+      158,
+      157
+     ],
+     "label": "hero-eyebrow",
+     "rect": [
+      112,
+      173,
+      1216,
+      20
+     ],
+     "color": "rgb(198, 172, 143)"
+    },
+    {
+     "status": "FAIL",
+     "need": 3.0,
+     "worst": 2.45,
+     "median": 2.71,
+     "fg": [
+      234,
+      224,
+      213
+     ],
+     "alpha": 1.0,
+     "fontSize": 96,
+     "fontWeight": 900,
+     "worstBackdropPx": [
+      144,
+      144,
+      143
+     ],
+     "label": "hero-h1",
+     "rect": [
+      112,
+      217,
+      1216,
+      96
+     ],
+     "color": "rgb(234, 224, 213)"
+    },
+    {
+     "status": "FAIL",
+     "need": 3.0,
+     "worst": 2.15,
+     "median": 2.32,
+     "fg": [
+      198,
+      172,
+      143
+     ],
+     "alpha": 1.0,
+     "fontSize": 30,
+     "fontWeight": 300,
+     "worstBackdropPx": [
+      117,
+      116,
+      116
+     ],
+     "label": "hero-h2",
+     "rect": [
+      112,
+      337,
+      1216,
+      72
+     ],
+     "color": "rgb(198, 172, 143)"
+    },
+    {
+     "status": "FAIL",
+     "need": 4.5,
+     "worst": 3.77,
+     "median": 4.32,
+     "fg": [
+      234,
+      224,
+      213
+     ],
+     "alpha": 0.7,
+     "fontSize": 20,
+     "fontWeight": 300,
+     "worstBackdropPx": [
+      85,
+      84,
+      84
+     ],
+     "label": "hero-lead",
+     "rect": [
+      336,
+      457,
+      768,
+      140
+     ],
+     "color": "rgba(234, 224, 213, 0.7)"
+    },
+    {
+     "status": "PASS",
+     "need": 4.5,
+     "worst": 9.19,
+     "median": 9.19,
+     "fg": [
+      10,
+      9,
+      8
+     ],
+     "alpha": 1.0,
+     "fontSize": 16,
+     "fontWeight": 900,
+     "worstBackdropPx": [
+      198,
+      172,
+      143
+     ],
+     "label": "hero-cta-proyectos",
+     "rect": [
+      423,
+      649,
+      371,
+      56
+     ],
+     "color": "rgb(10, 9, 8)"
+    },
+    {
+     "status": "PASS",
+     "need": 4.5,
+     "worst": 6.53,
+     "median": 6.98,
+     "fg": [
+      198,
+      172,
+      143
+     ],
+     "alpha": 1.0,
+     "fontSize": 16,
+     "fontWeight": 900,
+     "worstBackdropPx": [
+      44,
+      43,
+      42
+     ],
+     "label": "hero-cta-linkedin",
+     "rect": [
+      817,
+      645,
+      200,
+      64
+     ],
+     "color": "rgb(198, 172, 143)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "perfil-h3",
+     "rect": [
+      112,
+      897,
+      1216,
+      40
+     ],
+     "color": "rgb(234, 224, 213)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "perfil-body-1",
+     "rect": [
+      337,
+      1069,
+      766,
+      162
+     ],
+     "color": "rgb(209, 213, 219)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "perfil-body-3",
+     "rect": [
+      337,
+      1426,
+      766,
+      98
+     ],
+     "color": "rgb(209, 213, 219)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "stack-h4",
+     "rect": [
+      337,
+      1612,
+      766,
+      16
+     ],
+     "color": "rgb(198, 172, 143)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "stack-tag-python",
+     "rect": [
+      337,
+      1652,
+      76,
+      34
+     ],
+     "color": "rgb(234, 224, 213)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "stack-tag-django",
+     "rect": [
+      425,
+      1652,
+      75,
+      34
+     ],
+     "color": "rgb(234, 224, 213)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "stack-tag-html",
+     "rect": [
+      739,
+      1698,
+      98,
+      34
+     ],
+     "color": "rgb(10, 9, 8)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "stack-tag-procesos",
+     "rect": [
+      337,
+      1744,
+      166,
+      32
+     ],
+     "color": "rgb(10, 9, 8)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "proyectos-h3",
+     "rect": [
+      112,
+      2033,
+      1216,
+      48
+     ],
+     "color": "rgb(234, 224, 213)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "proyectos-lead",
+     "rect": [
+      384,
+      2097,
+      672,
+      56
+     ],
+     "color": "rgb(198, 172, 143)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "proj1-badge",
+     "rect": [
+      161,
+      2286,
+      244,
+      20
+     ],
+     "color": "rgb(10, 9, 8)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "proj1-h4",
+     "rect": [
+      161,
+      2322,
+      1118,
+      40
+     ],
+     "color": "rgb(198, 172, 143)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "proj1-body",
+     "rect": [
+      384,
+      2097,
+      672,
+      56
+     ],
+     "color": "rgb(198, 172, 143)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "proj1-tech",
+     "rect": [
+      161,
+      2592,
+      1118,
+      20
+     ],
+     "color": "rgba(198, 172, 143, 0.6)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "proj2-h4",
+     "rect": [
+      161,
+      2854,
+      884,
+      40
+     ],
+     "color": "rgb(198, 172, 143)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "proj2-demo-btn",
+     "rect": [
+      1086,
+      2852,
+      193,
+      44
+     ],
+     "color": "rgb(10, 9, 8)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "sub-h5",
+     "rect": [
+      186,
+      3224,
+      1068,
+      32
+     ],
+     "color": "rgb(234, 224, 213)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "sub-body-400",
+     "rect": [
+      186,
+      3268,
+      1068,
+      29
+     ],
+     "color": "rgb(156, 163, 175)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "sub-tech",
+     "rect": [
+      186,
+      3313,
+      1068,
+      20
+     ],
+     "color": "rgba(198, 172, 143, 0.6)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "github-btn-dark",
+     "rect": [
+      161,
+      2644,
+      133,
+      46
+     ],
+     "color": "rgb(234, 224, 213)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "video-btn-outline",
+     "rect": [
+      310,
+      2644,
+      179,
+      46
+     ],
+     "color": "rgb(234, 224, 213)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "roadmap-h5",
+     "rect": [
+      197,
+      4242,
+      1050,
+      20
+     ],
+     "color": "rgb(198, 172, 143)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "roadmap-body",
+     "rect": [
+      197,
+      4274,
+      1050,
+      52
+     ],
+     "color": "rgb(156, 163, 175)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "ciber-h4",
+     "rect": [
+      161,
+      4520,
+      1118,
+      36
+     ],
+     "color": "rgb(198, 172, 143)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "ciber-body",
+     "rect": [
+      161,
+      2394,
+      1118,
+      158
+     ],
+     "color": "rgb(209, 213, 219)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "ciber-tech",
+     "rect": [
+      161,
+      4668,
+      1118,
+      20
+     ],
+     "color": "rgba(198, 172, 143, 0.6)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "footer-h4",
+     "rect": [
+      112,
+      4996,
+      1216,
+      36
+     ],
+     "color": "rgb(234, 224, 213)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "footer-quote",
+     "rect": [
+      384,
+      5056,
+      672,
+      65
+     ],
+     "color": "rgb(198, 172, 143)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "footer-copyright",
+     "rect": [
+      112,
+      5329,
+      1216,
+      15
+     ],
+     "color": "rgba(255, 255, 255, 0.2)"
+    }
+   ],
+   "vw": 1440,
+   "vh": 900,
+   "docH": 5424,
+   "scrollW": 1440,
+   "overflowX": false
+  },
+  "hero-mobile": {
+   "viewport": "hero-mobile",
+   "rows": [
+    {
+     "status": "PASS",
+     "need": 3.0,
+     "worst": 15.34,
+     "median": 15.34,
+     "fg": [
+      234,
+      224,
+      213
+     ],
+     "alpha": 1.0,
+     "fontSize": 24,
+     "fontWeight": 900,
+     "worstBackdropPx": [
+      10,
+      8,
+      7
+     ],
+     "label": "nav-brand",
+     "rect": [
+      16,
+      24,
+      117,
+      32
+     ],
+     "color": "rgb(234, 224, 213)"
+    },
+    {
+     "status": "PASS",
+     "need": 4.5,
+     "worst": 9.23,
+     "median": 9.23,
+     "fg": [
+      198,
+      172,
+      143
+     ],
+     "alpha": 1.0,
+     "fontSize": 14,
+     "fontWeight": 700,
+     "worstBackdropPx": [
+      10,
+      8,
+      7
+     ],
+     "label": "nav-link-presentacion",
+     "rect": [
+      133,
+      30,
+      126,
+      20
+     ],
+     "color": "rgb(198, 172, 143)"
+    },
+    {
+     "status": "PASS",
+     "need": 4.5,
+     "worst": 9.23,
+     "median": 9.23,
+     "fg": [
+      198,
+      172,
+      143
+     ],
+     "alpha": 1.0,
+     "fontSize": 14,
+     "fontWeight": 700,
+     "worstBackdropPx": [
+      10,
+      8,
+      7
+     ],
+     "label": "nav-link-proyectos",
+     "rect": [
+      290,
+      30,
+      99,
+      20
+     ],
+     "color": "rgb(198, 172, 143)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "nav-link-contacto",
+     "rect": [
+      421,
+      30,
+      91,
+      20
+     ],
+     "color": "rgb(198, 172, 143)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "nav-github-btn",
+     "rect": [
+      544,
+      22,
+      118,
+      36
+     ],
+     "color": "rgb(10, 9, 8)"
+    },
+    {
+     "status": "FAIL",
+     "need": 4.5,
+     "worst": 1.18,
+     "median": 1.26,
+     "fg": [
+      198,
+      172,
+      143
+     ],
+     "alpha": 1.0,
+     "fontSize": 12,
+     "fontWeight": 900,
+     "worstBackdropPx": [
+      163,
+      162,
+      162
+     ],
+     "label": "hero-eyebrow",
+     "rect": [
+      16,
+      81,
+      358,
+      32
+     ],
+     "color": "rgb(198, 172, 143)"
+    },
+    {
+     "status": "FAIL",
+     "need": 3.0,
+     "worst": 1.93,
+     "median": 2.29,
+     "fg": [
+      234,
+      224,
+      213
+     ],
+     "alpha": 1.0,
+     "fontSize": 48,
+     "fontWeight": 900,
+     "worstBackdropPx": [
+      164,
+      163,
+      163
+     ],
+     "label": "hero-h1",
+     "rect": [
+      16,
+      137,
+      358,
+      180
+     ],
+     "color": "rgb(234, 224, 213)"
+    },
+    {
+     "status": "FAIL",
+     "need": 4.5,
+     "worst": 1.85,
+     "median": 2.04,
+     "fg": [
+      198,
+      172,
+      143
+     ],
+     "alpha": 1.0,
+     "fontSize": 20,
+     "fontWeight": 300,
+     "worstBackdropPx": [
+      128,
+      127,
+      126
+     ],
+     "label": "hero-h2",
+     "rect": [
+      16,
+      341,
+      358,
+      112
+     ],
+     "color": "rgb(198, 172, 143)"
+    },
+    {
+     "status": "FAIL",
+     "need": 4.5,
+     "worst": 3.5,
+     "median": 4.28,
+     "fg": [
+      234,
+      224,
+      213
+     ],
+     "alpha": 0.7,
+     "fontSize": 18,
+     "fontWeight": 300,
+     "worstBackdropPx": [
+      91,
+      90,
+      90
+     ],
+     "label": "hero-lead",
+     "rect": [
+      16,
+      501,
+      358,
+      263
+     ],
+     "color": "rgba(234, 224, 213, 0.7)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "hero-cta-proyectos",
+     "rect": [
+      16,
+      812,
+      358,
+      80
+     ],
+     "color": "rgb(10, 9, 8)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "hero-cta-linkedin",
+     "rect": [
+      95,
+      916,
+      200,
+      64
+     ],
+     "color": "rgb(198, 172, 143)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "perfil-h3",
+     "rect": [
+      16,
+      1076,
+      358,
+      80
+     ],
+     "color": "rgb(234, 224, 213)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "perfil-body-1",
+     "rect": [
+      57,
+      1264,
+      276,
+      455
+     ],
+     "color": "rgb(209, 213, 219)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "perfil-body-3",
+     "rect": [
+      57,
+      2173,
+      276,
+      292
+     ],
+     "color": "rgb(209, 213, 219)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "stack-h4",
+     "rect": [
+      57,
+      2555,
+      276,
+      16
+     ],
+     "color": "rgb(198, 172, 143)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "stack-tag-python",
+     "rect": [
+      57,
+      2595,
+      76,
+      34
+     ],
+     "color": "rgb(234, 224, 213)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "stack-tag-django",
+     "rect": [
+      145,
+      2595,
+      75,
+      34
+     ],
+     "color": "rgb(234, 224, 213)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "stack-tag-html",
+     "rect": [
+      57,
+      2825,
+      98,
+      34
+     ],
+     "color": "rgb(10, 9, 8)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "stack-tag-procesos",
+     "rect": [
+      165,
+      2871,
+      166,
+      34
+     ],
+     "color": "rgb(10, 9, 8)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "proyectos-h3",
+     "rect": [
+      16,
+      3138,
+      358,
+      96
+     ],
+     "color": "rgb(234, 224, 213)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "proyectos-lead",
+     "rect": [
+      16,
+      3250,
+      358,
+      112
+     ],
+     "color": "rgb(198, 172, 143)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "proj1-badge",
+     "rect": [
+      49,
+      3479,
+      244,
+      20
+     ],
+     "color": "rgb(10, 9, 8)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "proj1-h4",
+     "rect": [
+      49,
+      3515,
+      292,
+      108
+     ],
+     "color": "rgb(198, 172, 143)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "proj1-body",
+     "rect": [
+      16,
+      3250,
+      358,
+      112
+     ],
+     "color": "rgb(198, 172, 143)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "proj1-tech",
+     "rect": [
+      49,
+      4275,
+      292,
+      60
+     ],
+     "color": "rgba(198, 172, 143, 0.6)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "proj2-h4",
+     "rect": [
+      49,
+      4603,
+      292,
+      108
+     ],
+     "color": "rgb(198, 172, 143)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "proj2-demo-btn",
+     "rect": [
+      49,
+      4727,
+      292,
+      44
+     ],
+     "color": "rgb(10, 9, 8)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "sub-h5",
+     "rect": [
+      74,
+      5554,
+      242,
+      96
+     ],
+     "color": "rgb(234, 224, 213)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "sub-body-400",
+     "rect": [
+      74,
+      5662,
+      242,
+      146
+     ],
+     "color": "rgb(156, 163, 175)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "sub-tech",
+     "rect": [
+      74,
+      5824,
+      242,
+      40
+     ],
+     "color": "rgba(198, 172, 143, 0.6)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "github-btn-dark",
+     "rect": [
+      49,
+      4367,
+      133,
+      44
+     ],
+     "color": "rgb(234, 224, 213)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "video-btn-outline",
+     "rect": [
+      49,
+      4427,
+      179,
+      46
+     ],
+     "color": "rgb(234, 224, 213)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "roadmap-h5",
+     "rect": [
+      85,
+      7738,
+      224,
+      20
+     ],
+     "color": "rgb(198, 172, 143)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "roadmap-body",
+     "rect": [
+      85,
+      7770,
+      224,
+      182
+     ],
+     "color": "rgb(156, 163, 175)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "ciber-h4",
+     "rect": [
+      49,
+      8114,
+      292,
+      108
+     ],
+     "color": "rgb(198, 172, 143)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "ciber-body",
+     "rect": [
+      49,
+      3655,
+      292,
+      580
+     ],
+     "color": "rgb(209, 213, 219)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "ciber-tech",
+     "rect": [
+      49,
+      8418,
+      292,
+      40
+     ],
+     "color": "rgba(198, 172, 143, 0.6)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "footer-h4",
+     "rect": [
+      16,
+      8862,
+      358,
+      36
+     ],
+     "color": "rgb(234, 224, 213)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "footer-quote",
+     "rect": [
+      16,
+      8922,
+      358,
+      162
+     ],
+     "color": "rgb(198, 172, 143)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "footer-copyright",
+     "rect": [
+      16,
+      9293,
+      358,
+      30
+     ],
+     "color": "rgba(255, 255, 255, 0.2)"
+    }
+   ],
+   "vw": 390,
+   "vh": 844,
+   "docH": 9403,
+   "scrollW": 662,
+   "overflowX": true
+  },
+  "lower-desktop": {
+   "viewport": "lower-desktop",
+   "rows": [
+    {
+     "status": "PASS",
+     "need": 3.0,
+     "worst": 15.34,
+     "median": 15.34,
+     "fg": [
+      234,
+      224,
+      213
+     ],
+     "alpha": 1.0,
+     "fontSize": 24,
+     "fontWeight": 900,
+     "worstBackdropPx": [
+      10,
+      8,
+      7
+     ],
+     "label": "nav-brand",
+     "rect": [
+      112,
+      24,
+      117,
+      32
+     ],
+     "color": "rgb(234, 224, 213)"
+    },
+    {
+     "status": "PASS",
+     "need": 4.5,
+     "worst": 9.23,
+     "median": 9.23,
+     "fg": [
+      198,
+      172,
+      143
+     ],
+     "alpha": 1.0,
+     "fontSize": 14,
+     "fontWeight": 700,
+     "worstBackdropPx": [
+      10,
+      8,
+      7
+     ],
+     "label": "nav-link-presentacion",
+     "rect": [
+      799,
+      30,
+      126,
+      20
+     ],
+     "color": "rgb(198, 172, 143)"
+    },
+    {
+     "status": "PASS",
+     "need": 4.5,
+     "worst": 9.23,
+     "median": 9.23,
+     "fg": [
+      198,
+      172,
+      143
+     ],
+     "alpha": 1.0,
+     "fontSize": 14,
+     "fontWeight": 700,
+     "worstBackdropPx": [
+      10,
+      8,
+      7
+     ],
+     "label": "nav-link-proyectos",
+     "rect": [
+      956,
+      30,
+      99,
+      20
+     ],
+     "color": "rgb(198, 172, 143)"
+    },
+    {
+     "status": "PASS",
+     "need": 4.5,
+     "worst": 9.23,
+     "median": 9.23,
+     "fg": [
+      198,
+      172,
+      143
+     ],
+     "alpha": 1.0,
+     "fontSize": 14,
+     "fontWeight": 700,
+     "worstBackdropPx": [
+      10,
+      8,
+      7
+     ],
+     "label": "nav-link-contacto",
+     "rect": [
+      1087,
+      30,
+      91,
+      20
+     ],
+     "color": "rgb(198, 172, 143)"
+    },
+    {
+     "status": "PASS",
+     "need": 4.5,
+     "worst": 15.27,
+     "median": 15.27,
+     "fg": [
+      10,
+      9,
+      8
+     ],
+     "alpha": 1.0,
+     "fontSize": 14,
+     "fontWeight": 900,
+     "worstBackdropPx": [
+      234,
+      224,
+      213
+     ],
+     "label": "nav-github-btn",
+     "rect": [
+      1210,
+      22,
+      118,
+      36
+     ],
+     "color": "rgb(10, 9, 8)"
+    },
+    {
+     "status": "TOO-SMALL",
+     "label": "hero-eyebrow",
+     "rect": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "color": "rgb(198, 172, 143)"
+    },
+    {
+     "status": "TOO-SMALL",
+     "label": "hero-h1",
+     "rect": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "color": "rgb(234, 224, 213)"
+    },
+    {
+     "status": "TOO-SMALL",
+     "label": "hero-h2",
+     "rect": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "color": "rgb(198, 172, 143)"
+    },
+    {
+     "status": "TOO-SMALL",
+     "label": "hero-lead",
+     "rect": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "color": "rgba(234, 224, 213, 0.7)"
+    },
+    {
+     "status": "TOO-SMALL",
+     "label": "hero-cta-proyectos",
+     "rect": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "color": "rgb(10, 9, 8)"
+    },
+    {
+     "status": "TOO-SMALL",
+     "label": "hero-cta-linkedin",
+     "rect": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "color": "rgb(198, 172, 143)"
+    },
+    {
+     "status": "PASS",
+     "need": 3.0,
+     "worst": 14.84,
+     "median": 14.94,
+     "fg": [
+      234,
+      224,
+      213
+     ],
+     "alpha": 1.0,
+     "fontSize": 36,
+     "fontWeight": 900,
+     "worstBackdropPx": [
+      13,
+      14,
+      14
+     ],
+     "label": "perfil-h3",
+     "rect": [
+      112,
+      177,
+      1216,
+      40
+     ],
+     "color": "rgb(234, 224, 213)"
+    },
+    {
+     "status": "PASS",
+     "need": 4.5,
+     "worst": 10.99,
+     "median": 11.1,
+     "fg": [
+      209,
+      213,
+      219
+     ],
+     "alpha": 1.0,
+     "fontSize": 20,
+     "fontWeight": 300,
+     "worstBackdropPx": [
+      24,
+      34,
+      39
+     ],
+     "label": "perfil-body-1",
+     "rect": [
+      337,
+      349,
+      766,
+      162
+     ],
+     "color": "rgb(209, 213, 219)"
+    },
+    {
+     "status": "PASS",
+     "need": 4.5,
+     "worst": 10.09,
+     "median": 10.24,
+     "fg": [
+      209,
+      213,
+      219
+     ],
+     "alpha": 1.0,
+     "fontSize": 20,
+     "fontWeight": 300,
+     "worstBackdropPx": [
+      29,
+      41,
+      48
+     ],
+     "label": "perfil-body-3",
+     "rect": [
+      337,
+      706,
+      766,
+      98
+     ],
+     "color": "rgb(209, 213, 219)"
+    },
+    {
+     "status": "PASS",
+     "need": 4.5,
+     "worst": 6.63,
+     "median": 6.7,
+     "fg": [
+      198,
+      172,
+      143
+     ],
+     "alpha": 1.0,
+     "fontSize": 12,
+     "fontWeight": 900,
+     "worstBackdropPx": [
+      30,
+      44,
+      51
+     ],
+     "label": "stack-h4",
+     "rect": [
+      337,
+      892,
+      766,
+      16
+     ],
+     "color": "rgb(198, 172, 143)"
+    },
+    {
+     "status": "PASS",
+     "need": 4.5,
+     "worst": 7.99,
+     "median": 7.99,
+     "fg": [
+      234,
+      224,
+      213
+     ],
+     "alpha": 1.0,
+     "fontSize": 12,
+     "fontWeight": 700,
+     "worstBackdropPx": [
+      44,
+      67,
+      77
+     ],
+     "label": "stack-tag-python",
+     "rect": [
+      337,
+      932,
+      76,
+      34
+     ],
+     "color": "rgb(234, 224, 213)"
+    },
+    {
+     "status": "PASS",
+     "need": 4.5,
+     "worst": 5.98,
+     "median": 5.98,
+     "fg": [
+      234,
+      224,
+      213
+     ],
+     "alpha": 1.0,
+     "fontSize": 12,
+     "fontWeight": 700,
+     "worstBackdropPx": [
+      94,
+      80,
+      63
+     ],
+     "label": "stack-tag-django",
+     "rect": [
+      425,
+      932,
+      75,
+      34
+     ],
+     "color": "rgb(234, 224, 213)"
+    },
+    {
+     "status": "PASS",
+     "need": 4.5,
+     "worst": 12.91,
+     "median": 12.91,
+     "fg": [
+      10,
+      9,
+      8
+     ],
+     "alpha": 1.0,
+     "fontSize": 12,
+     "fontWeight": 700,
+     "worstBackdropPx": [
+      221,
+      206,
+      188
+     ],
+     "label": "stack-tag-html",
+     "rect": [
+      739,
+      978,
+      98,
+      34
+     ],
+     "color": "rgb(10, 9, 8)"
+    },
+    {
+     "status": "PASS",
+     "need": 4.5,
+     "worst": 9.19,
+     "median": 9.19,
+     "fg": [
+      10,
+      9,
+      8
+     ],
+     "alpha": 1.0,
+     "fontSize": 12,
+     "fontWeight": 700,
+     "worstBackdropPx": [
+      198,
+      172,
+      143
+     ],
+     "label": "stack-tag-procesos",
+     "rect": [
+      337,
+      1024,
+      166,
+      32
+     ],
+     "color": "rgb(10, 9, 8)"
+    },
+    {
+     "status": "PASS",
+     "need": 3.0,
+     "worst": 10.05,
+     "median": 10.05,
+     "fg": [
+      234,
+      224,
+      213
+     ],
+     "alpha": 1.0,
+     "fontSize": 48,
+     "fontWeight": 900,
+     "worstBackdropPx": [
+      34,
+      51,
+      59
+     ],
+     "label": "proyectos-h3",
+     "rect": [
+      112,
+      1313,
+      1216,
+      48
+     ],
+     "color": "rgb(234, 224, 213)"
+    },
+    {
+     "status": "PASS",
+     "need": 4.5,
+     "worst": 6.04,
+     "median": 6.04,
+     "fg": [
+      198,
+      172,
+      143
+     ],
+     "alpha": 1.0,
+     "fontSize": 20,
+     "fontWeight": 300,
+     "worstBackdropPx": [
+      34,
+      51,
+      59
+     ],
+     "label": "proyectos-lead",
+     "rect": [
+      384,
+      1377,
+      672,
+      56
+     ],
+     "color": "rgb(198, 172, 143)"
+    },
+    {
+     "status": "PASS",
+     "need": 4.5,
+     "worst": 9.19,
+     "median": 9.19,
+     "fg": [
+      10,
+      9,
+      8
+     ],
+     "alpha": 1.0,
+     "fontSize": 10,
+     "fontWeight": 900,
+     "worstBackdropPx": [
+      198,
+      172,
+      143
+     ],
+     "label": "proj1-badge",
+     "rect": [
+      161,
+      1566,
+      244,
+      20
+     ],
+     "color": "rgb(10, 9, 8)"
+    },
+    {
+     "status": "PASS",
+     "need": 3.0,
+     "worst": 8.19,
+     "median": 8.19,
+     "fg": [
+      198,
+      172,
+      143
+     ],
+     "alpha": 1.0,
+     "fontSize": 36,
+     "fontWeight": 900,
+     "worstBackdropPx": [
+      19,
+      25,
+      28
+     ],
+     "label": "proj1-h4",
+     "rect": [
+      161,
+      1602,
+      1118,
+      40
+     ],
+     "color": "rgb(198, 172, 143)"
+    },
+    {
+     "status": "PASS",
+     "need": 4.5,
+     "worst": 6.04,
+     "median": 6.04,
+     "fg": [
+      198,
+      172,
+      143
+     ],
+     "alpha": 1.0,
+     "fontSize": 20,
+     "fontWeight": 300,
+     "worstBackdropPx": [
+      34,
+      51,
+      59
+     ],
+     "label": "proj1-body",
+     "rect": [
+      384,
+      1377,
+      672,
+      56
+     ],
+     "color": "rgb(198, 172, 143)"
+    },
+    {
+     "status": "FAIL",
+     "need": 4.5,
+     "worst": 3.75,
+     "median": 3.75,
+     "fg": [
+      198,
+      172,
+      143
+     ],
+     "alpha": 0.6,
+     "fontSize": 14,
+     "fontWeight": 400,
+     "worstBackdropPx": [
+      19,
+      25,
+      28
+     ],
+     "label": "proj1-tech",
+     "rect": [
+      161,
+      1872,
+      1118,
+      20
+     ],
+     "color": "rgba(198, 172, 143, 0.6)"
+    },
+    {
+     "status": "PASS",
+     "need": 3.0,
+     "worst": 8.19,
+     "median": 8.19,
+     "fg": [
+      198,
+      172,
+      143
+     ],
+     "alpha": 1.0,
+     "fontSize": 36,
+     "fontWeight": 900,
+     "worstBackdropPx": [
+      19,
+      25,
+      28
+     ],
+     "label": "proj2-h4",
+     "rect": [
+      161,
+      2134,
+      884,
+      40
+     ],
+     "color": "rgb(198, 172, 143)"
+    },
+    {
+     "status": "PASS",
+     "need": 4.5,
+     "worst": 9.19,
+     "median": 9.19,
+     "fg": [
+      10,
+      9,
+      8
+     ],
+     "alpha": 1.0,
+     "fontSize": 14,
+     "fontWeight": 900,
+     "worstBackdropPx": [
+      198,
+      172,
+      143
+     ],
+     "label": "proj2-demo-btn",
+     "rect": [
+      1086,
+      2132,
+      193,
+      44
+     ],
+     "color": "rgb(10, 9, 8)"
+    },
+    {
+     "status": "PASS",
+     "need": 3.0,
+     "worst": 10.74,
+     "median": 10.74,
+     "fg": [
+      234,
+      224,
+      213
+     ],
+     "alpha": 1.0,
+     "fontSize": 24,
+     "fontWeight": 700,
+     "worstBackdropPx": [
+      31,
+      46,
+      53
+     ],
+     "label": "sub-h5",
+     "rect": [
+      186,
+      2504,
+      1068,
+      32
+     ],
+     "color": "rgb(234, 224, 213)"
+    },
+    {
+     "status": "PASS",
+     "need": 4.5,
+     "worst": 5.51,
+     "median": 5.51,
+     "fg": [
+      156,
+      163,
+      175
+     ],
+     "alpha": 1.0,
+     "fontSize": 18,
+     "fontWeight": 300,
+     "worstBackdropPx": [
+      31,
+      46,
+      53
+     ],
+     "label": "sub-body-400",
+     "rect": [
+      186,
+      2548,
+      1068,
+      29
+     ],
+     "color": "rgb(156, 163, 175)"
+    },
+    {
+     "status": "FAIL",
+     "need": 4.5,
+     "worst": 3.3,
+     "median": 3.3,
+     "fg": [
+      198,
+      172,
+      143
+     ],
+     "alpha": 0.6,
+     "fontSize": 14,
+     "fontWeight": 400,
+     "worstBackdropPx": [
+      31,
+      46,
+      53
+     ],
+     "label": "sub-tech",
+     "rect": [
+      186,
+      2593,
+      1068,
+      20
+     ],
+     "color": "rgba(198, 172, 143, 0.6)"
+    },
+    {
+     "status": "PASS",
+     "need": 4.5,
+     "worst": 15.27,
+     "median": 15.27,
+     "fg": [
+      234,
+      224,
+      213
+     ],
+     "alpha": 1.0,
+     "fontSize": 14,
+     "fontWeight": 700,
+     "worstBackdropPx": [
+      10,
+      9,
+      8
+     ],
+     "label": "github-btn-dark",
+     "rect": [
+      161,
+      1924,
+      133,
+      46
+     ],
+     "color": "rgb(234, 224, 213)"
+    },
+    {
+     "status": "PASS",
+     "need": 4.5,
+     "worst": 13.62,
+     "median": 13.62,
+     "fg": [
+      234,
+      224,
+      213
+     ],
+     "alpha": 1.0,
+     "fontSize": 14,
+     "fontWeight": 700,
+     "worstBackdropPx": [
+      19,
+      25,
+      28
+     ],
+     "label": "video-btn-outline",
+     "rect": [
+      310,
+      1924,
+      179,
+      46
+     ],
+     "color": "rgb(234, 224, 213)"
+    },
+    {
+     "status": "PASS",
+     "need": 4.5,
+     "worst": 8.64,
+     "median": 8.64,
+     "fg": [
+      198,
+      172,
+      143
+     ],
+     "alpha": 1.0,
+     "fontSize": 14,
+     "fontWeight": 900,
+     "worstBackdropPx": [
+      15,
+      19,
+      19
+     ],
+     "label": "roadmap-h5",
+     "rect": [
+      197,
+      3522,
+      1050,
+      20
+     ],
+     "color": "rgb(198, 172, 143)"
+    },
+    {
+     "status": "PASS",
+     "need": 4.5,
+     "worst": 7.37,
+     "median": 7.37,
+     "fg": [
+      156,
+      163,
+      175
+     ],
+     "alpha": 1.0,
+     "fontSize": 16,
+     "fontWeight": 300,
+     "worstBackdropPx": [
+      15,
+      19,
+      19
+     ],
+     "label": "roadmap-body",
+     "rect": [
+      197,
+      3554,
+      1050,
+      52
+     ],
+     "color": "rgb(156, 163, 175)"
+    },
+    {
+     "status": "PASS",
+     "need": 3.0,
+     "worst": 8.19,
+     "median": 8.19,
+     "fg": [
+      198,
+      172,
+      143
+     ],
+     "alpha": 1.0,
+     "fontSize": 30,
+     "fontWeight": 900,
+     "worstBackdropPx": [
+      19,
+      25,
+      28
+     ],
+     "label": "ciber-h4",
+     "rect": [
+      161,
+      3800,
+      1118,
+      36
+     ],
+     "color": "rgb(198, 172, 143)"
+    },
+    {
+     "status": "PASS",
+     "need": 4.5,
+     "worst": 12.04,
+     "median": 12.04,
+     "fg": [
+      209,
+      213,
+      219
+     ],
+     "alpha": 1.0,
+     "fontSize": 20,
+     "fontWeight": 300,
+     "worstBackdropPx": [
+      19,
+      25,
+      28
+     ],
+     "label": "ciber-body",
+     "rect": [
+      161,
+      1674,
+      1118,
+      158
+     ],
+     "color": "rgb(209, 213, 219)"
+    },
+    {
+     "status": "FAIL",
+     "need": 4.5,
+     "worst": 3.75,
+     "median": 3.75,
+     "fg": [
+      198,
+      172,
+      143
+     ],
+     "alpha": 0.6,
+     "fontSize": 14,
+     "fontWeight": 400,
+     "worstBackdropPx": [
+      19,
+      25,
+      28
+     ],
+     "label": "ciber-tech",
+     "rect": [
+      161,
+      3948,
+      1118,
+      20
+     ],
+     "color": "rgba(198, 172, 143, 0.6)"
+    },
+    {
+     "status": "PASS",
+     "need": 3.0,
+     "worst": 15.27,
+     "median": 15.27,
+     "fg": [
+      234,
+      224,
+      213
+     ],
+     "alpha": 1.0,
+     "fontSize": 30,
+     "fontWeight": 900,
+     "worstBackdropPx": [
+      10,
+      9,
+      8
+     ],
+     "label": "footer-h4",
+     "rect": [
+      112,
+      4276,
+      1216,
+      36
+     ],
+     "color": "rgb(234, 224, 213)"
+    },
+    {
+     "status": "PASS",
+     "need": 4.5,
+     "worst": 9.19,
+     "median": 9.19,
+     "fg": [
+      198,
+      172,
+      143
+     ],
+     "alpha": 1.0,
+     "fontSize": 20,
+     "fontWeight": 300,
+     "worstBackdropPx": [
+      10,
+      9,
+      8
+     ],
+     "label": "footer-quote",
+     "rect": [
+      384,
+      4336,
+      672,
+      65
+     ],
+     "color": "rgb(198, 172, 143)"
+    },
+    {
+     "status": "FAIL",
+     "need": 4.5,
+     "worst": 1.76,
+     "median": 1.76,
+     "fg": [
+      255,
+      255,
+      255
+     ],
+     "alpha": 0.2,
+     "fontSize": 10,
+     "fontWeight": 900,
+     "worstBackdropPx": [
+      10,
+      9,
+      8
+     ],
+     "label": "footer-copyright",
+     "rect": [
+      112,
+      4609,
+      1216,
+      15
+     ],
+     "color": "rgba(255, 255, 255, 0.2)"
+    }
+   ],
+   "vw": 1440,
+   "vh": 6200,
+   "docH": 6200,
+   "scrollW": 1440,
+   "overflowX": false
+  },
+  "lower-mobile": {
+   "viewport": "lower-mobile",
+   "rows": [
+    {
+     "status": "PASS",
+     "need": 3.0,
+     "worst": 15.34,
+     "median": 15.34,
+     "fg": [
+      234,
+      224,
+      213
+     ],
+     "alpha": 1.0,
+     "fontSize": 24,
+     "fontWeight": 900,
+     "worstBackdropPx": [
+      10,
+      8,
+      7
+     ],
+     "label": "nav-brand",
+     "rect": [
+      16,
+      24,
+      117,
+      32
+     ],
+     "color": "rgb(234, 224, 213)"
+    },
+    {
+     "status": "PASS",
+     "need": 4.5,
+     "worst": 9.23,
+     "median": 9.23,
+     "fg": [
+      198,
+      172,
+      143
+     ],
+     "alpha": 1.0,
+     "fontSize": 14,
+     "fontWeight": 700,
+     "worstBackdropPx": [
+      10,
+      8,
+      7
+     ],
+     "label": "nav-link-presentacion",
+     "rect": [
+      133,
+      30,
+      126,
+      20
+     ],
+     "color": "rgb(198, 172, 143)"
+    },
+    {
+     "status": "PASS",
+     "need": 4.5,
+     "worst": 9.23,
+     "median": 9.23,
+     "fg": [
+      198,
+      172,
+      143
+     ],
+     "alpha": 1.0,
+     "fontSize": 14,
+     "fontWeight": 700,
+     "worstBackdropPx": [
+      10,
+      8,
+      7
+     ],
+     "label": "nav-link-proyectos",
+     "rect": [
+      290,
+      30,
+      99,
+      20
+     ],
+     "color": "rgb(198, 172, 143)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "nav-link-contacto",
+     "rect": [
+      421,
+      30,
+      91,
+      20
+     ],
+     "color": "rgb(198, 172, 143)"
+    },
+    {
+     "status": "OFFSCREEN",
+     "label": "nav-github-btn",
+     "rect": [
+      544,
+      22,
+      118,
+      36
+     ],
+     "color": "rgb(10, 9, 8)"
+    },
+    {
+     "status": "TOO-SMALL",
+     "label": "hero-eyebrow",
+     "rect": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "color": "rgb(198, 172, 143)"
+    },
+    {
+     "status": "TOO-SMALL",
+     "label": "hero-h1",
+     "rect": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "color": "rgb(234, 224, 213)"
+    },
+    {
+     "status": "TOO-SMALL",
+     "label": "hero-h2",
+     "rect": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "color": "rgb(198, 172, 143)"
+    },
+    {
+     "status": "TOO-SMALL",
+     "label": "hero-lead",
+     "rect": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "color": "rgba(234, 224, 213, 0.7)"
+    },
+    {
+     "status": "TOO-SMALL",
+     "label": "hero-cta-proyectos",
+     "rect": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "color": "rgb(10, 9, 8)"
+    },
+    {
+     "status": "TOO-SMALL",
+     "label": "hero-cta-linkedin",
+     "rect": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "color": "rgb(198, 172, 143)"
+    },
+    {
+     "status": "PASS",
+     "need": 3.0,
+     "worst": 14.95,
+     "median": 15.02,
+     "fg": [
+      234,
+      224,
+      213
+     ],
+     "alpha": 1.0,
+     "fontSize": 36,
+     "fontWeight": 900,
+     "worstBackdropPx": [
+      12,
+      13,
+      12
+     ],
+     "label": "perfil-h3",
+     "rect": [
+      16,
+      177,
+      358,
+      80
+     ],
+     "color": "rgb(234, 224, 213)"
+    },
+    {
+     "status": "PASS",
+     "need": 4.5,
+     "worst": 11.1,
+     "median": 11.33,
+     "fg": [
+      209,
+      213,
+      219
+     ],
+     "alpha": 1.0,
+     "fontSize": 20,
+     "fontWeight": 300,
+     "worstBackdropPx": [
+      24,
+      33,
+      38
+     ],
+     "label": "perfil-body-1",
+     "rect": [
+      57,
+      365,
+      276,
+      455
+     ],
+     "color": "rgb(209, 213, 219)"
+    },
+    {
+     "status": "PASS",
+     "need": 4.5,
+     "worst": 9.96,
+     "median": 10.09,
+     "fg": [
+      209,
+      213,
+      219
+     ],
+     "alpha": 1.0,
+     "fontSize": 20,
+     "fontWeight": 300,
+     "worstBackdropPx": [
+      30,
+      42,
+      49
+     ],
+     "label": "perfil-body-3",
+     "rect": [
+      57,
+      1274,
+      276,
+      292
+     ],
+     "color": "rgb(209, 213, 219)"
+    },
+    {
+     "status": "PASS",
+     "need": 4.5,
+     "worst": 6.61,
+     "median": 6.61,
+     "fg": [
+      198,
+      172,
+      143
+     ],
+     "alpha": 1.0,
+     "fontSize": 12,
+     "fontWeight": 900,
+     "worstBackdropPx": [
+      31,
+      44,
+      52
+     ],
+     "label": "stack-h4",
+     "rect": [
+      57,
+      1656,
+      276,
+      16
+     ],
+     "color": "rgb(198, 172, 143)"
+    },
+    {
+     "status": "PASS",
+     "need": 4.5,
+     "worst": 7.99,
+     "median": 7.99,
+     "fg": [
+      234,
+      224,
+      213
+     ],
+     "alpha": 1.0,
+     "fontSize": 12,
+     "fontWeight": 700,
+     "worstBackdropPx": [
+      44,
+      67,
+      77
+     ],
+     "label": "stack-tag-python",
+     "rect": [
+      57,
+      1696,
+      76,
+      34
+     ],
+     "color": "rgb(234, 224, 213)"
+    },
+    {
+     "status": "PASS",
+     "need": 4.5,
+     "worst": 5.98,
+     "median": 5.98,
+     "fg": [
+      234,
+      224,
+      213
+     ],
+     "alpha": 1.0,
+     "fontSize": 12,
+     "fontWeight": 700,
+     "worstBackdropPx": [
+      94,
+      80,
+      63
+     ],
+     "label": "stack-tag-django",
+     "rect": [
+      145,
+      1696,
+      75,
+      34
+     ],
+     "color": "rgb(234, 224, 213)"
+    },
+    {
+     "status": "PASS",
+     "need": 4.5,
+     "worst": 12.91,
+     "median": 12.91,
+     "fg": [
+      10,
+      9,
+      8
+     ],
+     "alpha": 1.0,
+     "fontSize": 12,
+     "fontWeight": 700,
+     "worstBackdropPx": [
+      221,
+      206,
+      188
+     ],
+     "label": "stack-tag-html",
+     "rect": [
+      57,
+      1926,
+      98,
+      34
+     ],
+     "color": "rgb(10, 9, 8)"
+    },
+    {
+     "status": "PASS",
+     "need": 4.5,
+     "worst": 9.19,
+     "median": 9.19,
+     "fg": [
+      10,
+      9,
+      8
+     ],
+     "alpha": 1.0,
+     "fontSize": 12,
+     "fontWeight": 700,
+     "worstBackdropPx": [
+      198,
+      172,
+      143
+     ],
+     "label": "stack-tag-procesos",
+     "rect": [
+      165,
+      1972,
+      166,
+      34
+     ],
+     "color": "rgb(10, 9, 8)"
+    },
+    {
+     "status": "PASS",
+     "need": 3.0,
+     "worst": 10.05,
+     "median": 10.05,
+     "fg": [
+      234,
+      224,
+      213
+     ],
+     "alpha": 1.0,
+     "fontSize": 48,
+     "fontWeight": 900,
+     "worstBackdropPx": [
+      34,
+      51,
+      59
+     ],
+     "label": "proyectos-h3",
+     "rect": [
+      16,
+      2238,
+      358,
+      96
+     ],
+     "color": "rgb(234, 224, 213)"
+    },
+    {
+     "status": "PASS",
+     "need": 4.5,
+     "worst": 6.04,
+     "median": 6.04,
+     "fg": [
+      198,
+      172,
+      143
+     ],
+     "alpha": 1.0,
+     "fontSize": 20,
+     "fontWeight": 300,
+     "worstBackdropPx": [
+      34,
+      51,
+      59
+     ],
+     "label": "proyectos-lead",
+     "rect": [
+      16,
+      2350,
+      358,
+      112
+     ],
+     "color": "rgb(198, 172, 143)"
+    },
+    {
+     "status": "PASS",
+     "need": 4.5,
+     "worst": 9.19,
+     "median": 9.19,
+     "fg": [
+      10,
+      9,
+      8
+     ],
+     "alpha": 1.0,
+     "fontSize": 10,
+     "fontWeight": 900,
+     "worstBackdropPx": [
+      198,
+      172,
+      143
+     ],
+     "label": "proj1-badge",
+     "rect": [
+      49,
+      2580,
+      244,
+      20
+     ],
+     "color": "rgb(10, 9, 8)"
+    },
+    {
+     "status": "PASS",
+     "need": 3.0,
+     "worst": 8.19,
+     "median": 8.19,
+     "fg": [
+      198,
+      172,
+      143
+     ],
+     "alpha": 1.0,
+     "fontSize": 30,
+     "fontWeight": 900,
+     "worstBackdropPx": [
+      19,
+      25,
+      28
+     ],
+     "label": "proj1-h4",
+     "rect": [
+      49,
+      2616,
+      292,
+      108
+     ],
+     "color": "rgb(198, 172, 143)"
+    },
+    {
+     "status": "PASS",
+     "need": 4.5,
+     "worst": 6.04,
+     "median": 6.04,
+     "fg": [
+      198,
+      172,
+      143
+     ],
+     "alpha": 1.0,
+     "fontSize": 20,
+     "fontWeight": 300,
+     "worstBackdropPx": [
+      34,
+      51,
+      59
+     ],
+     "label": "proj1-body",
+     "rect": [
+      16,
+      2350,
+      358,
+      112
+     ],
+     "color": "rgb(198, 172, 143)"
+    },
+    {
+     "status": "FAIL",
+     "need": 4.5,
+     "worst": 3.75,
+     "median": 3.75,
+     "fg": [
+      198,
+      172,
+      143
+     ],
+     "alpha": 0.6,
+     "fontSize": 14,
+     "fontWeight": 400,
+     "worstBackdropPx": [
+      19,
+      25,
+      28
+     ],
+     "label": "proj1-tech",
+     "rect": [
+      49,
+      3376,
+      292,
+      60
+     ],
+     "color": "rgba(198, 172, 143, 0.6)"
+    },
+    {
+     "status": "PASS",
+     "need": 3.0,
+     "worst": 8.19,
+     "median": 8.19,
+     "fg": [
+      198,
+      172,
+      143
+     ],
+     "alpha": 1.0,
+     "fontSize": 30,
+     "fontWeight": 900,
+     "worstBackdropPx": [
+      19,
+      25,
+      28
+     ],
+     "label": "proj2-h4",
+     "rect": [
+      49,
+      3704,
+      292,
+      108
+     ],
+     "color": "rgb(198, 172, 143)"
+    },
+    {
+     "status": "PASS",
+     "need": 4.5,
+     "worst": 9.19,
+     "median": 9.19,
+     "fg": [
+      10,
+      9,
+      8
+     ],
+     "alpha": 1.0,
+     "fontSize": 14,
+     "fontWeight": 900,
+     "worstBackdropPx": [
+      198,
+      172,
+      143
+     ],
+     "label": "proj2-demo-btn",
+     "rect": [
+      49,
+      3828,
+      292,
+      44
+     ],
+     "color": "rgb(10, 9, 8)"
+    },
+    {
+     "status": "PASS",
+     "need": 3.0,
+     "worst": 10.74,
+     "median": 10.74,
+     "fg": [
+      234,
+      224,
+      213
+     ],
+     "alpha": 1.0,
+     "fontSize": 24,
+     "fontWeight": 700,
+     "worstBackdropPx": [
+      31,
+      46,
+      53
+     ],
+     "label": "sub-h5",
+     "rect": [
+      74,
+      4654,
+      242,
+      96
+     ],
+     "color": "rgb(234, 224, 213)"
+    },
+    {
+     "status": "PASS",
+     "need": 4.5,
+     "worst": 5.51,
+     "median": 5.51,
+     "fg": [
+      156,
+      163,
+      175
+     ],
+     "alpha": 1.0,
+     "fontSize": 18,
+     "fontWeight": 300,
+     "worstBackdropPx": [
+      31,
+      46,
+      53
+     ],
+     "label": "sub-body-400",
+     "rect": [
+      74,
+      4762,
+      242,
+      146
+     ],
+     "color": "rgb(156, 163, 175)"
+    },
+    {
+     "status": "FAIL",
+     "need": 4.5,
+     "worst": 3.3,
+     "median": 3.3,
+     "fg": [
+      198,
+      172,
+      143
+     ],
+     "alpha": 0.6,
+     "fontSize": 14,
+     "fontWeight": 400,
+     "worstBackdropPx": [
+      31,
+      46,
+      53
+     ],
+     "label": "sub-tech",
+     "rect": [
+      74,
+      4925,
+      242,
+      40
+     ],
+     "color": "rgba(198, 172, 143, 0.6)"
+    },
+    {
+     "status": "PASS",
+     "need": 4.5,
+     "worst": 15.27,
+     "median": 15.27,
+     "fg": [
+      234,
+      224,
+      213
+     ],
+     "alpha": 1.0,
+     "fontSize": 14,
+     "fontWeight": 700,
+     "worstBackdropPx": [
+      10,
+      9,
+      8
+     ],
+     "label": "github-btn-dark",
+     "rect": [
+      49,
+      3468,
+      133,
+      44
+     ],
+     "color": "rgb(234, 224, 213)"
+    },
+    {
+     "status": "PASS",
+     "need": 4.5,
+     "worst": 13.62,
+     "median": 13.62,
+     "fg": [
+      234,
+      224,
+      213
+     ],
+     "alpha": 1.0,
+     "fontSize": 14,
+     "fontWeight": 700,
+     "worstBackdropPx": [
+      19,
+      25,
+      28
+     ],
+     "label": "video-btn-outline",
+     "rect": [
+      49,
+      3528,
+      179,
+      46
+     ],
+     "color": "rgb(234, 224, 213)"
+    },
+    {
+     "status": "PASS",
+     "need": 4.5,
+     "worst": 8.64,
+     "median": 8.64,
+     "fg": [
+      198,
+      172,
+      143
+     ],
+     "alpha": 1.0,
+     "fontSize": 14,
+     "fontWeight": 900,
+     "worstBackdropPx": [
+      15,
+      19,
+      19
+     ],
+     "label": "roadmap-h5",
+     "rect": [
+      85,
+      6839,
+      224,
+      20
+     ],
+     "color": "rgb(198, 172, 143)"
+    },
+    {
+     "status": "PASS",
+     "need": 4.5,
+     "worst": 7.37,
+     "median": 7.37,
+     "fg": [
+      156,
+      163,
+      175
+     ],
+     "alpha": 1.0,
+     "fontSize": 16,
+     "fontWeight": 300,
+     "worstBackdropPx": [
+      15,
+      19,
+      19
+     ],
+     "label": "roadmap-body",
+     "rect": [
+      85,
+      6871,
+      224,
+      182
+     ],
+     "color": "rgb(156, 163, 175)"
+    },
+    {
+     "status": "PASS",
+     "need": 3.0,
+     "worst": 8.19,
+     "median": 8.19,
+     "fg": [
+      198,
+      172,
+      143
+     ],
+     "alpha": 1.0,
+     "fontSize": 30,
+     "fontWeight": 900,
+     "worstBackdropPx": [
+      19,
+      25,
+      28
+     ],
+     "label": "ciber-h4",
+     "rect": [
+      49,
+      7215,
+      292,
+      108
+     ],
+     "color": "rgb(198, 172, 143)"
+    },
+    {
+     "status": "PASS",
+     "need": 4.5,
+     "worst": 12.04,
+     "median": 12.04,
+     "fg": [
+      209,
+      213,
+      219
+     ],
+     "alpha": 1.0,
+     "fontSize": 20,
+     "fontWeight": 300,
+     "worstBackdropPx": [
+      19,
+      25,
+      28
+     ],
+     "label": "ciber-body",
+     "rect": [
+      49,
+      2756,
+      292,
+      580
+     ],
+     "color": "rgb(209, 213, 219)"
+    },
+    {
+     "status": "FAIL",
+     "need": 4.5,
+     "worst": 3.75,
+     "median": 3.75,
+     "fg": [
+      198,
+      172,
+      143
+     ],
+     "alpha": 0.6,
+     "fontSize": 14,
+     "fontWeight": 400,
+     "worstBackdropPx": [
+      19,
+      25,
+      28
+     ],
+     "label": "ciber-tech",
+     "rect": [
+      49,
+      7519,
+      292,
+      40
+     ],
+     "color": "rgba(198, 172, 143, 0.6)"
+    },
+    {
+     "status": "PASS",
+     "need": 3.0,
+     "worst": 15.27,
+     "median": 15.27,
+     "fg": [
+      234,
+      224,
+      213
+     ],
+     "alpha": 1.0,
+     "fontSize": 30,
+     "fontWeight": 900,
+     "worstBackdropPx": [
+      10,
+      9,
+      8
+     ],
+     "label": "footer-h4",
+     "rect": [
+      16,
+      7963,
+      358,
+      36
+     ],
+     "color": "rgb(234, 224, 213)"
+    },
+    {
+     "status": "PASS",
+     "need": 4.5,
+     "worst": 9.19,
+     "median": 9.7,
+     "fg": [
+      198,
+      172,
+      143
+     ],
+     "alpha": 1.0,
+     "fontSize": 20,
+     "fontWeight": 300,
+     "worstBackdropPx": [
+      10,
+      9,
+      8
+     ],
+     "label": "footer-quote",
+     "rect": [
+      16,
+      8023,
+      358,
+      162
+     ],
+     "color": "rgb(198, 172, 143)"
+    },
+    {
+     "status": "FAIL",
+     "need": 4.5,
+     "worst": 1.66,
+     "median": 1.66,
+     "fg": [
+      255,
+      255,
+      255
+     ],
+     "alpha": 0.2,
+     "fontSize": 10,
+     "fontWeight": 900,
+     "worstBackdropPx": [
+      0,
+      0,
+      0
+     ],
+     "label": "footer-copyright",
+     "rect": [
+      16,
+      8394,
+      358,
+      30
+     ],
+     "color": "rgba(255, 255, 255, 0.2)"
+    }
+   ],
+   "vw": 390,
+   "vh": 8600,
+   "docH": 8600,
+   "scrollW": 662,
+   "overflowX": true
+  }
+ },
+ "raw": {
+  "hero-desktop": {
+   "vw": 1440,
+   "vh": 900,
+   "dpr": 1,
+   "docH": 5424,
+   "scrollW": 1440,
+   "overflowX": false,
+   "checks": {
+    "htmlLang": "es",
+    "bannerAlt": "Traduciendo la Ingeniería",
+    "bannerAltEmpty": false,
+    "footerLinks": [
+     {
+      "ariaLabel": null,
+      "title": "Enviar Email",
+      "text": "",
+      "iconAriaHidden": [
+       null
+      ]
+     },
+     {
+      "ariaLabel": null,
+      "title": "LinkedIn",
+      "text": "",
+      "iconAriaHidden": [
+       null
+      ]
+     },
+     {
+      "ariaLabel": null,
+      "title": "GitHub",
+      "text": "",
+      "iconAriaHidden": [
+       null
+      ]
+     }
+    ],
+    "iconsWithoutAriaHidden": 18,
+    "totalAnchorIcons": 18,
+    "css": {
+     "focusVisible": [],
+     "reducedMotion": [],
+     "focusAny": []
+    },
+    "navFocusOutline": {
+     "outlineStyle": "none",
+     "outlineWidth": "3px",
+     "outlineColor": "rgb(198, 172, 143)",
+     "boxShadow": "none"
+    },
+    "mainLandmarks": 0,
+    "skipLink": 0,
+    "hasReveal": false
+   },
+   "png": "C:\\Users\\carli\\AppData\\Local\\Temp\\a11y-scratch\\out\\bd-before-hero-desktop.png"
+  },
+  "hero-mobile": {
+   "vw": 390,
+   "vh": 844,
+   "dpr": 1,
+   "docH": 9403,
+   "scrollW": 662,
+   "overflowX": true,
+   "checks": {
+    "htmlLang": "es",
+    "bannerAlt": "Traduciendo la Ingeniería",
+    "bannerAltEmpty": false,
+    "footerLinks": [
+     {
+      "ariaLabel": null,
+      "title": "Enviar Email",
+      "text": "",
+      "iconAriaHidden": [
+       null
+      ]
+     },
+     {
+      "ariaLabel": null,
+      "title": "LinkedIn",
+      "text": "",
+      "iconAriaHidden": [
+       null
+      ]
+     },
+     {
+      "ariaLabel": null,
+      "title": "GitHub",
+      "text": "",
+      "iconAriaHidden": [
+       null
+      ]
+     }
+    ],
+    "iconsWithoutAriaHidden": 18,
+    "totalAnchorIcons": 18,
+    "css": {
+     "focusVisible": [],
+     "reducedMotion": [],
+     "focusAny": []
+    },
+    "navFocusOutline": {
+     "outlineStyle": "none",
+     "outlineWidth": "3px",
+     "outlineColor": "rgb(198, 172, 143)",
+     "boxShadow": "none"
+    },
+    "mainLandmarks": 0,
+    "skipLink": 0,
+    "hasReveal": false
+   },
+   "png": "C:\\Users\\carli\\AppData\\Local\\Temp\\a11y-scratch\\out\\bd-before-hero-mobile.png"
+  },
+  "lower-desktop": {
+   "vw": 1440,
+   "vh": 6200,
+   "dpr": 1,
+   "docH": 6200,
+   "scrollW": 1440,
+   "overflowX": false,
+   "checks": {
+    "htmlLang": "es",
+    "bannerAlt": "Traduciendo la Ingeniería",
+    "bannerAltEmpty": false,
+    "footerLinks": [
+     {
+      "ariaLabel": null,
+      "title": "Enviar Email",
+      "text": "",
+      "iconAriaHidden": [
+       null
+      ]
+     },
+     {
+      "ariaLabel": null,
+      "title": "LinkedIn",
+      "text": "",
+      "iconAriaHidden": [
+       null
+      ]
+     },
+     {
+      "ariaLabel": null,
+      "title": "GitHub",
+      "text": "",
+      "iconAriaHidden": [
+       null
+      ]
+     }
+    ],
+    "iconsWithoutAriaHidden": 18,
+    "totalAnchorIcons": 18,
+    "css": {
+     "focusVisible": [],
+     "reducedMotion": [],
+     "focusAny": []
+    },
+    "navFocusOutline": {
+     "outlineStyle": "none",
+     "outlineWidth": "3px",
+     "outlineColor": "rgb(198, 172, 143)",
+     "boxShadow": "none"
+    },
+    "mainLandmarks": 0,
+    "skipLink": 0,
+    "hasReveal": false
+   },
+   "png": "C:\\Users\\carli\\AppData\\Local\\Temp\\a11y-scratch\\out\\bd-before-lower-desktop.png"
+  },
+  "lower-mobile": {
+   "vw": 390,
+   "vh": 8600,
+   "dpr": 1,
+   "docH": 8600,
+   "scrollW": 662,
+   "overflowX": true,
+   "checks": {
+    "htmlLang": "es",
+    "bannerAlt": "Traduciendo la Ingeniería",
+    "bannerAltEmpty": false,
+    "footerLinks": [
+     {
+      "ariaLabel": null,
+      "title": "Enviar Email",
+      "text": "",
+      "iconAriaHidden": [
+       null
+      ]
+     },
+     {
+      "ariaLabel": null,
+      "title": "LinkedIn",
+      "text": "",
+      "iconAriaHidden": [
+       null
+      ]
+     },
+     {
+      "ariaLabel": null,
+      "title": "GitHub",
+      "text": "",
+      "iconAriaHidden": [
+       null
+      ]
+     }
+    ],
+    "iconsWithoutAriaHidden": 18,
+    "totalAnchorIcons": 18,
+    "css": {
+     "focusVisible": [],
+     "reducedMotion": [],
+     "focusAny": []
+    },
+    "navFocusOutline": {
+     "outlineStyle": "none",
+     "outlineWidth": "3px",
+     "outlineColor": "rgb(198, 172, 143)",
+     "boxShadow": "none"
+    },
+    "mainLandmarks": 0,
+    "skipLink": 0,
+    "hasReveal": false
+   },
+   "png": "C:\\Users\\carli\\AppData\\Local\\Temp\\a11y-scratch\\out\\bd-before-lower-mobile.png"
+  }
+ }
+}

@@ -1,0 +1,9 @@
+# rendered scratch pages, screenshots and the throwaway Chrome profile
+.work/
+__pycache__/
+
+# generated reports: regenerate with probe.py / widths.py
+# the pre-pass baseline is the one exception: check.py needs it for S7
+out/*.json
+!out/report-before.json
+out/*.png
