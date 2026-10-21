@@ -20,7 +20,6 @@ OUT = os.path.join(HERE, "out")
 WORK = os.path.join(HERE, ".work")
 
 _CANDIDATES = [
-    os.environ.get("A11Y_CHROME"),
     r"C:\Program Files\Google\Chrome\Application\chrome.exe",
     r"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe",
     "/usr/bin/google-chrome",
@@ -31,14 +30,34 @@ _CANDIDATES = [
 
 
 def chrome():
-    """Path to a real Chrome binary; never guessed silently."""
+    """Path to a real Chrome binary; never guessed silently.
+
+    An explicit A11Y_CHROME wins and must exist: falling back to another binary
+    would measure with a browser other than the one asked for.
+    """
+    requested = os.environ.get("A11Y_CHROME")
+    if requested:
+        if os.path.exists(requested):
+            return requested
+        raise SystemExit("A11Y_CHROME does not exist: %s" % requested)
+
     for cand in _CANDIDATES:
-        if cand and os.path.exists(cand):
+        if os.path.exists(cand):
             return cand
     found = shutil.which("chrome") or shutil.which("google-chrome") or shutil.which("chromium")
     if found:
         return found
     raise SystemExit("Chrome not found: set A11Y_CHROME to the executable path")
+
+
+def extra_flags():
+    """Flags this environment needs, and none on a normal desktop.
+
+    Chrome's sandbox is unavailable on containerised CI runners, where the
+    browser aborts before rendering anything. A11Y_NO_SANDBOX=1 adds
+    --no-sandbox only for that case, so a local run keeps the sandbox on.
+    """
+    return ["--no-sandbox"] if os.environ.get("A11Y_NO_SANDBOX") == "1" else []
 
 
 def page():

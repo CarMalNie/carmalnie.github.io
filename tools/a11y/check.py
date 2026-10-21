@@ -16,8 +16,16 @@ OUT = common.OUT
 # spec id -> requirement
 HERO = ["hero-eyebrow", "hero-h1", "hero-h2", "hero-lead", "hero-cta-linkedin"]
 MUTED = ["proj1-tech", "sub-tech", "ciber-tech", "footer-copyright"]
+# Muted lines were deliberately darkened to reach AA: S7 diffs colors, so these
+# labels are exempt from that comparison and asserted on their own ratio instead.
 INTENDED_COLOR_CHANGE = set(MUTED)
 MOBILE_VIEWPORTS = ("hero-mobile", "lower-mobile")
+
+# A row with no usable measurement: clipping or a target smaller than 2x2px.
+# MISSING is excluded on purpose: a selector that matches nothing is a defect,
+# not something to skip.
+UNMEASURABLE = ("OFFSCREEN", "TOO-SMALL")
+SKIP = UNMEASURABLE + ("MISSING",)
 
 
 def intended_layout_change(label, viewport):
@@ -30,9 +38,6 @@ def intended_layout_change(label, viewport):
     other rect stay under the differential check.
     """
     return label.startswith("nav-") and viewport.endswith("-mobile")
-
-
-SKIP = ("OFFSCREEN", "TOO-SMALL", "MISSING")
 
 
 def uniform_mobile_shift(baseline_rows, current_rows, viewport):
@@ -57,7 +62,12 @@ def uniform_mobile_shift(baseline_rows, current_rows, viewport):
         same_size = n["rect"][2:] == m["rect"][2:]
         if dx == 0 and same_size and dy:
             deltas[dy] = deltas.get(dy, 0) + 1
-    return max(deltas, key=deltas.get) if deltas else 0
+    if not deltas:
+        return 0
+    ranked = sorted(deltas.items(), key=lambda kv: -kv[1])
+    if len(ranked) > 1 and ranked[0][1] == ranked[1][1]:
+        return 0  # two candidate deltas tie: exempt nothing rather than pick one
+    return ranked[0][0]
 
 
 def moved_only_by(before, after, shift):
@@ -92,7 +102,7 @@ def main():
             seen = 0
             for vp in viewports:
                 m = per.get(vp)
-                if not m or m["status"] in ("OFFSCREEN", "TOO-SMALL"):
+                if not m or m["status"] in UNMEASURABLE:
                     continue
                 seen += 1
                 ok = m["status"] == "PASS"

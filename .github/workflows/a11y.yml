@@ -1,0 +1,60 @@
+name: a11y
+
+# The AA floor of this site is measured on rendered pixels, so it only holds
+# while something keeps measuring. These are the same three commands documented
+# in tools/a11y/README.md, run on every push to master and every pull request.
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  gates:
+    name: contrast, reflow and structure
+    runs-on: ubuntu-latest
+    env:
+      # Chrome's sandbox is unavailable on containerised runners.
+      A11Y_NO_SANDBOX: "1"
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Pillow
+        run: python -m pip install --upgrade pip pillow
+
+      - name: Install Chrome
+        uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: stable
+
+      # Reflow first: a page that scrolls sideways also distorts every rect the
+      # contrast probe would sample.
+      - name: WCAG 1.4.10 reflow gate, 320-1440px
+        working-directory: tools/a11y
+        run: python widths.py ci
+
+      - name: WCAG 1.4.3 contrast and structure on rendered pixels
+        working-directory: tools/a11y
+        run: python probe.py ci
+
+      - name: Acceptance spec against the pre-pass baseline
+        working-directory: tools/a11y
+        run: python check.py ci before
+
+      - name: Keep the evidence when a gate fails
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: a11y-reports
+          path: |
+            tools/a11y/out/*.json
+            tools/a11y/.work/*.png
+          if-no-files-found: warn

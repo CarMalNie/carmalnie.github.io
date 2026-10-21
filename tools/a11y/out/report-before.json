@@ -3199,8 +3199,7 @@
     "mainLandmarks": 0,
     "skipLink": 0,
     "hasReveal": false
-   },
-   "png": "C:\\Users\\carli\\AppData\\Local\\Temp\\a11y-scratch\\out\\bd-before-hero-desktop.png"
+   }
   },
   "hero-mobile": {
    "vw": 390,
@@ -3255,8 +3254,7 @@
     "mainLandmarks": 0,
     "skipLink": 0,
     "hasReveal": false
-   },
-   "png": "C:\\Users\\carli\\AppData\\Local\\Temp\\a11y-scratch\\out\\bd-before-hero-mobile.png"
+   }
   },
   "lower-desktop": {
    "vw": 1440,
@@ -3311,8 +3309,7 @@
     "mainLandmarks": 0,
     "skipLink": 0,
     "hasReveal": false
-   },
-   "png": "C:\\Users\\carli\\AppData\\Local\\Temp\\a11y-scratch\\out\\bd-before-lower-desktop.png"
+   }
   },
   "lower-mobile": {
    "vw": 390,
@@ -3367,8 +3364,7 @@
     "mainLandmarks": 0,
     "skipLink": 0,
     "hasReveal": false
-   },
-   "png": "C:\\Users\\carli\\AppData\\Local\\Temp\\a11y-scratch\\out\\bd-before-lower-mobile.png"
+   }
   }
  }
 }

@@ -47,9 +47,17 @@ function diag(doc, win) {
 }
 frames.forEach(function (f) {
   f.addEventListener('load', function () {
-    var win = f.contentWindow, doc = win.document;
+    var win = f.contentWindow, doc = win.document, tries = 0;
     (function ready() {
-      if (doc.readyState !== 'complete') { setTimeout(ready, 50); return; }
+      if (doc.readyState !== 'complete') {
+        // Bounded: a frame that never settles must fail loudly with the width
+        // that hung, instead of dying on the virtual time budget with no clue.
+        if (++tries > 40) {
+          document.title = 'ERR:frame-not-ready-at-' + f.dataset.w + 'px';
+          return;
+        }
+        setTimeout(ready, 50); return;
+      }
       setTimeout(function () {
         var res = { w: +f.dataset.w, vw: win.innerWidth,
                     scrollW: doc.documentElement.scrollWidth,
@@ -71,15 +79,20 @@ frames.forEach(function (f) {
 
 
 def run(page):
-    flags = ["--headless=new", "--disable-gpu", "--hide-scrollbars",
-             "--force-device-scale-factor=1", "--window-size=1500,1000",
-             "--virtual-time-budget=30000", "--no-first-run",
-             "--no-default-browser-check", "--allow-file-access-from-files",
-             "--user-data-dir=" + os.path.join(WORK, "profile"),
-             "file:///" + page.replace("\\", "/").lstrip("/")]
+    flags = common.extra_flags() + [
+        "--headless=new", "--disable-gpu", "--hide-scrollbars",
+        "--force-device-scale-factor=1", "--window-size=1500,1000",
+        "--virtual-time-budget=30000", "--no-first-run",
+        "--no-default-browser-check", "--allow-file-access-from-files",
+        "--user-data-dir=" + os.path.join(WORK, "profile"),
+        "file:///" + page.replace("\\", "/").lstrip("/"),
+    ]
     dom = subprocess.run([CHROME] + flags + ["--dump-dom"], capture_output=True,
                          text=True, timeout=300, encoding="utf-8", errors="replace")
-    m = re.search(r"<title>(?:WIDTHS|ERR):?([A-Za-z0-9+/=]*)</title>", dom.stdout or "")
+    err = re.search(r"<title>ERR:([^<]*)</title>", dom.stdout or "")
+    if err:
+        raise SystemExit("widths probe failed: %s" % err.group(1))
+    m = re.search(r"<title>WIDTHS:?([A-Za-z0-9+/=]*)</title>", dom.stdout or "")
     if not m or not m.group(1):
         t = re.search(r"<title>([^<]*)</title>", dom.stdout or "")
         raise SystemExit("widths probe failed: %r" % (t.group(1) if t else None))

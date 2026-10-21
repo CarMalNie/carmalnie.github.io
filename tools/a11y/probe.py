@@ -21,7 +21,6 @@ import common
 CHROME = common.chrome()
 OUT = common.OUT
 WORK = common.WORK
-FRAME_TOP = 0
 
 SPECS = [
     ["nav-brand", 'nav a[href="#inicio"]', 0],
@@ -103,7 +102,6 @@ f.addEventListener('load', function () {
   (function ready() {
     if (doc.readyState !== 'complete') { setTimeout(ready, 50); return; }
     var go = function () {
-      try { win.document.fonts.ready.then(function () {}); } catch (e) {}
       setTimeout(function () {
         var fo = f.getBoundingClientRect();
         var out = [];
@@ -174,14 +172,16 @@ def make_parent(name, src, w, h):
 
 def run(page, w, h, tag):
     png = os.path.join(WORK, "bd-%s.png" % tag)
-    flags = ["--headless=new", "--disable-gpu", "--hide-scrollbars",
-              "--force-device-scale-factor=1",
-              "--window-size=%d,%d" % (w, min(h, 8100)),
-              "--virtual-time-budget=25000", "--no-first-run",
-              "--no-default-browser-check", "--disable-lcd-text",
-              "--allow-file-access-from-files",
-              "--user-data-dir=" + os.path.join(WORK, "profile"),
-              "file:///" + page.replace("\\", "/").lstrip("/")]
+    flags = common.extra_flags() + [
+        "--headless=new", "--disable-gpu", "--hide-scrollbars",
+        "--force-device-scale-factor=1",
+        "--window-size=%d,%d" % (w, min(h, 8100)),
+        "--virtual-time-budget=25000", "--no-first-run",
+        "--no-default-browser-check", "--disable-lcd-text",
+        "--allow-file-access-from-files",
+        "--user-data-dir=" + os.path.join(WORK, "profile"),
+        "file:///" + page.replace("\\", "/").lstrip("/"),
+    ]
     if os.path.exists(png):
         os.remove(png)
     subprocess.run([CHROME] + flags + ["--screenshot=" + png],

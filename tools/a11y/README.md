@@ -16,6 +16,22 @@ screenshots and the Chrome profile stay in `.work/` (gitignored).
 Optional:
 
 - `A11Y_PAGE=/path/to/page.html` audits a page other than `<repo>/index.html`.
+- `A11Y_NO_SANDBOX=1` adds `--no-sandbox`, needed where Chrome's sandbox is
+  unavailable (containerised CI runners). A local run keeps the sandbox on.
+
+## Continuous integration
+
+`.github/workflows/a11y.yml` runs the same three commands on every push to
+`master`, every pull request, and on demand, with `A11Y_NO_SANDBOX=1`. The gates
+run in this order because a page that scrolls sideways also distorts every rect
+the contrast probe would sample:
+
+1. `widths.py ci` — WCAG 1.4.10 reflow, 320-1440px
+2. `probe.py ci` — WCAG 1.4.3 contrast on rendered pixels plus structure
+3. `check.py ci before` — the acceptance spec against the committed baseline
+
+A failing run uploads `out/*.json` and the screenshots from `.work/` as
+artifacts, so a red build can be diagnosed without re-running it.
 
 ## Usage
 
