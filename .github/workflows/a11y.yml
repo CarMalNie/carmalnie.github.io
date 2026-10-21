@@ -47,14 +47,30 @@ jobs:
         working-directory: tools/a11y
         run: python probe.py ci
 
-      # Absolute specs only. The S7 differential compares rects against a
-      # baseline captured on another machine, and font metrics differ per
-      # platform: measured, linux against a win32 baseline turned a single 52px
-      # nav push into two competing deltas of 52 and 72. Run
-      # `check.py <tag> before` locally, where the baseline is comparable.
-      - name: Acceptance spec (S7 differential is same-machine only)
+      # S7 compares rects against a baseline, and font metrics differ per
+      # platform: measured, a win32 baseline on a linux runner turned a single
+      # 52px nav push into two competing deltas (52 and 72) and flagged every
+      # rect below the fold as a regression. So the baseline is measured here,
+      # from the parent commit, with this runner's fonts and Chrome.
+      - name: Baseline from the parent commit, same runner
         working-directory: tools/a11y
-        run: python check.py ci
+        run: |
+          if git rev-parse --verify --quiet HEAD~1 >/dev/null; then
+            git worktree add --detach "$RUNNER_TEMP/a11y-base" HEAD~1
+            A11Y_PAGE="$RUNNER_TEMP/a11y-base/index.html" python probe.py ci-base
+          else
+            echo "no parent commit: the S7 differential needs one"
+          fi
+
+      - name: Acceptance spec
+        working-directory: tools/a11y
+        run: |
+          if [ -f out/report-ci-base.json ]; then
+            python check.py ci ci-base
+          else
+            echo "no same-runner baseline: absolute specs only"
+            python check.py ci
+          fi
 
       - name: Keep the evidence when a gate fails
         if: failure()

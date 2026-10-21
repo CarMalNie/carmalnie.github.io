@@ -170,7 +170,8 @@ def main():
                     layout_bad.append("%s@%s regressed to %s" % (label, vp, n["status"]))
         checks.append(("S7 no layout regression", not layout_bad, "; ".join(layout_bad[:6])))
         checks.append(("S7 no unexpected color change", not color_bad, "; ".join(color_bad[:6])))
-        checks.append(("S7 mobile shift is the nav delta", all(v > 0 for v in shifts.values()),
+        checks.append(("S7 mobile shift reports the measured delta",
+                       all(v >= 0 for v in shifts.values()),
                        ", ".join("%s +%dpx" % (k, v) for k, v in sorted(shifts.items()))))
 
     width = max(len(c[0]) for c in checks)

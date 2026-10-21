@@ -15,7 +15,7 @@ from pathlib import Path
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(os.path.dirname(HERE))
-PAGE = os.environ.get("A11Y_PAGE") or os.path.join(ROOT, "index.html")
+PAGE = os.path.abspath(os.environ.get("A11Y_PAGE") or os.path.join(ROOT, "index.html"))
 OUT = os.path.join(HERE, "out")
 WORK = os.path.join(HERE, ".work")
 
@@ -75,12 +75,14 @@ def dirs():
 
 
 def base_tag():
-    """<base> that resolves the page's relative assets (banner.png) from the repo root.
+    """<base> that resolves the page's relative assets from its own directory.
 
     Scratch copies live in .work/, so without this every relative asset of the
-    page would 404 and the contrast probe would sample blank pixels.
+    page would 404 and the contrast probe would sample blank pixels. It follows
+    the page, not the repository root, so a page measured from another worktree
+    resolves that worktree's own assets.
     """
-    uri = Path(ROOT).as_uri()
+    uri = Path(os.path.dirname(PAGE)).as_uri()
     if not uri.endswith("/"):
         uri += "/"
     return '<base href="%s">' % uri

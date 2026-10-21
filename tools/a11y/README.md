@@ -28,16 +28,20 @@ the contrast probe would sample:
 
 1. `widths.py ci` — WCAG 1.4.10 reflow, 320-1440px
 2. `probe.py ci` — WCAG 1.4.3 contrast on rendered pixels plus structure
-3. `check.py ci` — the absolute acceptance spec (`S1`-`S6`)
+3. `probe.py ci-base` — the same probe over the **parent commit**, checked out
+   into `$RUNNER_TEMP/a11y-base` and measured through `A11Y_PAGE`
+4. `check.py ci ci-base` — the full spec, differential included
 
-CI runs the absolute spec only, without a baseline: `S7` compares rects against
-`out/report-before.json`, which was captured on another machine, and font
-metrics differ per platform. Measured on the first CI run: a linux runner
-against a win32 baseline turned one uniform 52px nav push into two competing
-deltas of 52px and 72px, and every rect below the fold was reported as a
-regression. The differential stays a same-machine tool — run
-`check.py <tag> before` locally — and `check.py` skips it with an explicit
-`SKIP` line when the two reports record different platforms.
+`S7` compares rects, and font metrics differ per platform: measured, a win32
+baseline on a linux runner turned one uniform 52px nav push into two competing
+deltas of 52px and 72px and reported every rect below the fold as a regression.
+That is why CI measures its own baseline from the parent commit on the same
+runner instead of trusting the committed one. When there is no parent commit,
+the step says so and the spec runs without the differential.
+
+Locally, `check.py <tag> before` still diffs against the committed baseline, and
+`check.py` prints an explicit `SKIP` when the two reports record different
+platforms.
 
 A failing run uploads `out/*.json` and the screenshots from `.work/` as
 artifacts, so a red build can be diagnosed without re-running it.
