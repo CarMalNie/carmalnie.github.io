@@ -4,7 +4,13 @@
 Reads out/report-<tag>.json produced by probe.py and asserts each requirement.
 An optional baseline tag enables the differential checks (S7).
 
-Usage: python check.py <tag> [baseline-tag]
+Usage: python check.py <tag> [baseline-tag] [--layout]
+
+A baseline tag enables the colour differential. `--layout` adds the rect
+differential on top, which is meant for layout refactors: a copy edit
+legitimately pushes everything below it down by a uniform dy, so that check
+would fail for doing exactly what the commit was asked to do.
+
 Exit code 0 = every spec satisfied, 1 = at least one violation.
 """
 import json, os, sys
@@ -108,8 +114,14 @@ def rows_by_label(report):
 
 
 def main():
-    tag = sys.argv[1]
-    baseline_tag = sys.argv[2] if len(sys.argv) > 2 else None
+    flags = [a for a in sys.argv[1:] if a.startswith("--")]
+    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    if not args or [f for f in flags if f != "--layout"]:
+        print("usage: check.py <tag> [baseline-tag] [--layout]", file=sys.stderr)
+        return 1
+    layout_diff = "--layout" in flags
+    tag = args[0]
+    baseline_tag = args[1] if len(args) > 1 else None
     rep = load(tag)
     rl = rows_by_label(rep)
     checks = []  # (spec, ok, detail)
@@ -177,21 +189,28 @@ def main():
                     continue
                 n = rl.get(label, {}).get(vp)
                 if not n or n["status"] in SKIP:
-                    layout_bad.append("%s@%s lost from capture" % (label, vp))
+                    if layout_diff:
+                        layout_bad.append("%s@%s lost from capture" % (label, vp))
+                    continue
+                if m["color"] != n["color"] and label not in INTENDED_COLOR_CHANGE:
+                    color_bad.append("%s@%s color %s -> %s" % (label, vp, m["color"], n["color"]))
+                if not layout_diff:
                     continue
                 if m["rect"] != n["rect"] and not intended_layout_change(label, vp) \
                         and not moved_only_by(m["rect"], n["rect"], shifts.get(vp, 0)):
                     layout_bad.append("%s@%s rect %s -> %s" % (label, vp, m["rect"], n["rect"]))
-                if m["color"] != n["color"] and label not in INTENDED_COLOR_CHANGE:
-                    color_bad.append("%s@%s color %s -> %s" % (label, vp, m["color"], n["color"]))
                 if m["status"] == "PASS" and n["status"] != "PASS":
                     layout_bad.append("%s@%s regressed to %s" % (label, vp, n["status"]))
-        detail = "; ".join(layout_bad[:6])
-        accepted = ", ".join("%s %+dpx" % (k, v) for k, v in sorted(shifts.items()))
-        if accepted:
-            detail = (detail + " | " if detail else "") + "accepted nav shift: " + accepted
-        checks.append(("S7 no layout regression", not layout_bad, detail))
         checks.append(("S7 no unexpected color change", not color_bad, "; ".join(color_bad[:6])))
+        if layout_diff:
+            detail = "; ".join(layout_bad[:6])
+            accepted = ", ".join("%s %+dpx" % (k, v) for k, v in sorted(shifts.items()))
+            if accepted:
+                detail = (detail + " | " if detail else "") + "accepted nav shift: " + accepted
+            checks.append(("S7 no layout regression", not layout_bad, detail))
+        else:
+            checks.append(("S7 no layout regression", None,
+                           "not requested: --layout diffs rects, for layout refactors"))
 
     width = max(len(c[0]) for c in checks)
     fails = 0

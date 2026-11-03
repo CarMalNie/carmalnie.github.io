@@ -22,6 +22,10 @@ CHROME = common.chrome()
 OUT = common.OUT
 WORK = common.WORK
 
+# [label, selector, index, text]. `text` wins over `index` when present: a
+# positional index renumbers every element after an insertion, which turned
+# adding one stack chip into a "colour change" on the two labels that
+# shifted. The chips assert by text for that reason.
 SPECS = [
     ["nav-brand", 'nav a[href="#inicio"]', 0],
     ["nav-link-presentacion", 'nav a[href="#presentacion"]', 0],
@@ -38,10 +42,10 @@ SPECS = [
     ["perfil-body-1", "#presentacion .glass p", 0],
     ["perfil-body-3", "#presentacion .glass p", 2],
     ["stack-h4", "#presentacion h4", 0],
-    ["stack-tag-python", "#presentacion .flex-wrap span", 0],
-    ["stack-tag-django", "#presentacion .flex-wrap span", 1],
-    ["stack-tag-html", "#presentacion .flex-wrap span", 9],
-    ["stack-tag-procesos", "#presentacion .flex-wrap span", 12],
+    ["stack-tag-python", "#presentacion .flex-wrap span", 0, "Python"],
+    ["stack-tag-django", "#presentacion .flex-wrap span", 0, "Django"],
+    ["stack-tag-html", "#presentacion .flex-wrap span", 0, "HTML/CSS"],
+    ["stack-tag-procesos", "#presentacion .flex-wrap span", 0, "Procesos"],
     ["proyectos-h3", "#proyectos h3", 0],
     ["proyectos-lead", "#proyectos > div > p", 0],
     ["proj1-badge", "#proyectos span.px-3", 0],
@@ -107,7 +111,14 @@ f.addEventListener('load', function () {
         var out = [];
         for (var i = 0; i < SPECS.length; i++) {
           var label = SPECS[i][0], sel = SPECS[i][1], idx = SPECS[i][2];
+          var want = SPECS[i][3];
           var el = doc.querySelectorAll(sel)[idx];
+          if (want) {
+            var cand = doc.querySelectorAll(sel);
+            el = null;
+            for (var c = 0; c < cand.length; c++)
+              if (cand[c].textContent.indexOf(want) !== -1) { el = cand[c]; break; }
+          }
           if (!el) { out.push({ label: label, missing: true }); continue; }
           var r = el.getBoundingClientRect(), cs = win.getComputedStyle(el);
           out.push({ label: label,

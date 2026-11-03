@@ -2,8 +2,7 @@
 .work/
 __pycache__/
 
-# generated reports: regenerate with probe.py / widths.py
-# the pre-pass baseline is the one exception: check.py needs it for S7
+# generated reports: regenerate with probe.py / widths.py, including any
+# differential baseline (it must be measured by the current probe.py)
 out/*.json
-!out/report-before.json
 out/*.png
