@@ -34,7 +34,7 @@ Plataforma Full Stack para gestionar una base de datos de compuestos químicos, 
 Sitio web informativo (HTML/CSS/JavaScript/Bootstrap) sobre conceptos fundamentales de ciberseguridad, enfocado en maquetación responsiva.
 **[Ver Sitio](https://carmalnie.github.io/Sitio-Estatico-Ciberseguridad/)** | **[Ver Repositorio](https://github.com/CarMalNie/Sitio-Estatico-Ciberseguridad)** | **[Video Demo](https://youtu.be/PdunHiWGRf8)**
 
-**Colaboración actual:** Software de Gestión de Laboratorios (ISO 17.025). Actúo como el experto técnico, traduciendo los requerimientos de un laboratorio a las especificaciones de software (Python, Django REST, Docker).
+**Colaboración previa:** Software de Gestión de Laboratorios (ISO 17.025). Actué como el experto técnico, traduciendo los requerimientos de un laboratorio a las especificaciones de software (Python, Django REST, Docker).
 
 ---
 
