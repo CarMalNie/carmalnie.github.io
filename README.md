@@ -12,7 +12,7 @@ Sitio en vivo: **[carmalnie.github.io](https://carmalnie.github.io/)**
 ### Mi Stack Tecnológico
 
 **Backend:** Python | Django | MySQL | Django REST Framework | Docker
-**Cloud:** AWS Certified Cloud Practitioner (CLF-C02) | AWS re/Start Graduated
+**Cloud:** AWS Cloud Practitioner (CLF-C02) | AWS re/Start Graduated
 **IA Aplicada:** LangChain | LangGraph | RAG | Chroma | Gemini
 **Automatización:** n8n | RPA | Playwright
 **Frontend:** HTML | CSS | JavaScript | Bootstrap
